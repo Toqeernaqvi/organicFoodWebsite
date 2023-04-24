@@ -40,9 +40,11 @@
 <?php 
   SESSION_START();
   include "lib/connection.php";
+  error_reporting(E_ERROR | E_PARSE);
+
   $id=$_SESSION['userid'];
- $sql = "SELECT * FROM cart where userid='$id'";
- $result = $conn -> query ($sql);
+  $sql = "SELECT * FROM cart where userid='$id'";
+  $result = $conn -> query ($sql);
 ?>
 <!--nav start--->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
