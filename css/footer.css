@@ -1,0 +1,36 @@
+footer {
+  background: rgb(47, 123, 47);
+  color: #fff;
+  margin-top: 30px;
+}
+
+footer > .footer {
+  max-width: 1200px;
+  margin: 12px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+footer > div > img {
+  width: 150px;
+}
+
+footer > div > p {
+  max-width: 600px;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.copyright {
+  background: rgb(26, 52, 26);
+  color: rgb(200, 200, 200);
+  padding: 6px 0;
+  text-align: center;
+}

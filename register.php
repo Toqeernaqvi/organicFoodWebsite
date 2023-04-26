@@ -7,9 +7,10 @@ $result = null;
     $f_name=$_POST['u_name'];
     $l_name=$_POST['l_name'];
     $email=$_POST['email'];
-    $pass=md5($_POST['pass']);
-    $cpass=md5($_POST['c_pass']);
-
+    // $pass=md5($_POST['pass']);
+    // $cpass=md5($_POST['c_pass']);
+    $pass=($_POST['pass']);
+    $cpass=($_POST['c_pass']);
     if ($pass==$cpass) 
     {
          $insertSql = "INSERT INTO users(f_name ,l_name, email, pass) VALUES ('$f_name', '$l_name','$email', '$pass')";
@@ -47,7 +48,7 @@ $result = null;
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>411</title>
 
 
@@ -79,7 +80,7 @@ $result = null;
                                             placeholder="Last Name" name="l_name">
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group my-3">
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Email Address" name="email">
                                 </div>
@@ -88,12 +89,12 @@ $result = null;
                                         <input type="password" class="form-control form-control-user"
                                             id="exampleInputPassword" placeholder="Password" name="pass">
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 mb-4">
                                         <input type="password" class="form-control form-control-user"
                                             id="exampleRepeatPassword" placeholder="Repeat Password" name="c_pass">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-user btn-block" name="u_submit">Register Account</button>
+                                <button type="submit" class="btn btn-primary btn-user btn-block mb-4" name="u_submit">Register Account</button>
                             
 
                             <hr>
