@@ -12,8 +12,7 @@ if (isset($_SESSION['auth'])) {
 include "lib/connection.php";
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
-    $pass = md5($_POST['password']);
-    $pass = ($_POST['password']);
+    $pass = $_POST['password'];
     $loginquery = "SELECT * FROM users WHERE email='$email' AND pass='$pass'";
     $loginres = $conn->query($loginquery);
 

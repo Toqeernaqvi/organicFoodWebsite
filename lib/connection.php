@@ -7,7 +7,7 @@ $db   ="organicfoodsite";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
-if ($conn -> connect_error) 
+if ($conn -> connect_error)
 {
 	die($conn -> error);
 }
