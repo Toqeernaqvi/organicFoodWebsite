@@ -17,6 +17,12 @@ else
 
  $sql = "SELECT * FROM users";
  $result = $conn -> query ($sql);
+
+ if(isset($_GET['remove'])){
+  $remove_id = $_GET['remove'];
+  mysqli_query($conn, "DELETE FROM `users` WHERE id = '$remove_id'");
+  header('location:users.php');
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,10 +41,10 @@ else
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Id</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Email</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -48,10 +54,13 @@ else
             while($row = mysqli_fetch_assoc($result)) {
               ?>
     <tr>
-      <td><?php echo $row["id"] ?></td>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <input type="hidden" name="update_id"  value="<?php echo  $row['id']; ?>" >
       <td><?php echo $row["f_name"] ?></td>
       <td><?php echo $row["l_name"] ?></td>
       <td><?php echo $row["email"] ?></td>
+      </form></td>
+      <td><a href="users.php?remove=<?php echo $row['id']; ?>">remove</a></td>
     </tr>
     <?php 
     }
@@ -62,6 +71,5 @@ else
   </tbody>
 </table>
 </div>
-    
 </body>
 </html>

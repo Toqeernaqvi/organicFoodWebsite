@@ -57,15 +57,11 @@ $result = $conn -> query ($sql);
 			<li class="nav-item">
 				<a class="nav-link vp" href="all_product.php">All Product</a>
 			</li>
-			
 			<li class="nav-item">
 				<a class="nav-link ao" href="all_orders.php">Delivered Order</a>
 			</li>
             <li class="nav-item">
                 <a class="nav-link u" href="users.php">Users</a>
-            </li>
-			<li class="nav-item">
-                <a class="nav-link u" href="report.php">Report</a>
             </li>
 		</ul>
 	</div>

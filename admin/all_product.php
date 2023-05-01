@@ -81,10 +81,10 @@ else
       </form></td>
       <td><a href="all_product.php?remove=<?php echo $row['id']; ?>">remove</a></td>
     </tr>
-    <?php 
+    <?php
     }
-        } 
-        else 
+        }
+        else
             echo "0 results";
         ?>
   </tbody>
