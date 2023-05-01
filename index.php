@@ -53,9 +53,7 @@ if (isset($_POST['add_to_cart'])) {
       </div>
 
       <div class="col-md-6">
-
         <img src="" class="img-fluid">
-
       </div>
 
     </div>
@@ -77,8 +75,6 @@ if (isset($_POST['add_to_cart'])) {
           <p>A passage of Lorem Ipsum you need here</p>
 
         </div>
-
-
       </div>
 
     </div>
@@ -108,9 +104,7 @@ if (isset($_POST['add_to_cart'])) {
                   <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
                   <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
                 </div>
-                <div class="product-btn">
-                  <button class="mt-2">Add to Cart</button>
-                </div>
+                <input type="submit" class="btn btn-primary mt-2" value="add to cart" name="add_to_cart">
               </div>
             </div>
           </form>
@@ -119,8 +113,6 @@ if (isset($_POST['add_to_cart'])) {
       } else
         echo "0 results";
       ?>
-
-
     </div>
   </div>
 </section>

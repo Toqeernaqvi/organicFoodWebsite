@@ -2,8 +2,9 @@
 include 'header.php';
 include 'lib/connection.php';
 
-$sql = "SELECT * FROM product";
+$sql = "SELECT * FROM product where catagory = 'fruits'";
 $result = $conn->query($sql);
+
 
 if (isset($_POST['add_to_cart'])) {
 
@@ -41,34 +42,31 @@ if (isset($_POST['add_to_cart'])) {
       <div class="row">
         <div class="col-md-12 text-center">
           <img src="img/mark.png">
-          <h4>All Products</h4>
+          <h4>Fresh Fruits</h4>
           <p>A passage of Lorem Ipsum you need here</p>
-
         </div>
-
-
       </div>
-
     </div>
   </div>
+
   <div class="container">
-    <div class="row">
+    <div class="row product align-items-center">
       <?php
       if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while ($row = mysqli_fetch_assoc($result)) {
           ?>
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <div class="col-md-3 col-sm-6 col-6">
+            <div class="">
               <div>
-                <img src="admin/product_img/<?php echo $row['imgname']; ?>">
+                <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img">
               </div>
               <div>
                 <div>
-                  <h6>
+                  <h6 class="mb-1">
                     <?php echo $row["name"] ?>
                   </h6>
-                  <span>$
+                  <span class="mb-2">RM
                     <?php echo $row["Price"] ?>
                   </span>
                   <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid']; ?>">
@@ -76,7 +74,7 @@ if (isset($_POST['add_to_cart'])) {
                   <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
                   <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
                 </div>
-                <input type="submit" class="btn btn btn-primary" value="add to cart" name="add_to_cart">
+                <input type="submit" class="btn btn-primary" value="add to cart" name="add_to_cart">
               </div>
 
             </div>
@@ -91,3 +89,7 @@ if (isset($_POST['add_to_cart'])) {
     </div>
   </div>
 </section>
+
+<?php
+include 'footer.php';
+?>

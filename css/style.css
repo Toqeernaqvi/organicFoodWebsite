@@ -2,6 +2,7 @@
   font-family: "antonio";
   src: url("../fonts/antonio-bold.ttf");
 }
+
 /**header-top start**/
 
 .line {
@@ -320,7 +321,7 @@ p {
   gap: 20px;
 }
 
-.product-btn button {
+.product-btn {
   background-color: #8beb8c !important;
   border: none;
   padding: 10px 20px;
@@ -379,5 +380,21 @@ div:has(.product-img) {
 
 .about-img img {
   width: 500px;
-  /* height: 300px; */
+}
+
+/* ====================================   CLASSES FOR JAVASCRIPT  ================================== */
+
+small {
+  color: red;
+  position: absolute;
+  bottom: -9px;
+  left: 10px;
+  visibility: hidden;
+}
+
+small.error {
+  visibility: visible;
+  color: red;
+  border: none;
+  display: inline;
 }

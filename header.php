@@ -51,6 +51,9 @@
             <li class="nav-item">
               <a class="nav-link" href="fruits.php">Fruits</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about-us.php">About US</a>
+            </li>
           </ul>
           <form class="form-inline" action="search(1).php" method="post">
             <!--<a href=""><img src="img/search.png"></a>-->
@@ -68,9 +71,13 @@
             }
           }
           ?>
+
           <a href="cart(1).php" class="mr-2"><img src="img/cart.png">
-            <?php echo $total ?>
+            <span class="badge badge-warning">
+              <?php echo $total ?>
+            </span>
           </a>
+
           <?php
 
           if (isset($_SESSION['auth'])) {
@@ -87,8 +94,6 @@
             <?php
           }
           ?>
-
-
         </div>
       </div>
     </nav>

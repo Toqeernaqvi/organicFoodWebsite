@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     echo $email;
     echo $pass;
 
-    $loginquery = "SELECT * FROM users WHERE email='$email' AND pass='$pass'";
+    $loginquery = "SELECT * FROM admin WHERE email='$email' AND pass='$pass'";
     $loginres = $conn->query($loginquery);
 
     echo $loginres->num_rows;
