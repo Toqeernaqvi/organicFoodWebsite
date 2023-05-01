@@ -387,7 +387,7 @@ div:has(.product-img) {
 small {
   color: red;
   position: absolute;
-  bottom: -9px;
+  bottom: -15px;
   left: 10px;
   visibility: hidden;
 }

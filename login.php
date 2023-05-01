@@ -12,12 +12,11 @@ if (isset($_SESSION['auth'])) {
 include "lib/connection.php";
 if (isset($_POST['submit'])) {
     $email = $_POST['email'];
-    // $pass = md5($_POST['password']);
+    $pass = md5($_POST['password']);
     $pass = ($_POST['password']);
     $loginquery = "SELECT * FROM users WHERE email='$email' AND pass='$pass'";
     $loginres = $conn->query($loginquery);
 
-    echo $loginres->num_rows;
 
     if ($loginres->num_rows > 0) {
 
@@ -31,7 +30,10 @@ if (isset($_POST['submit'])) {
         $_SESSION['auth'] = 1;
         header("location:index.php");
     } else {
-        echo "invalid";
+        echo ' <div class="alert container mt-5 alert-danger alert-dismissible fade show" role="alert">
+ Email or Password is invlid
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>';
     }
 }
 
@@ -138,22 +140,14 @@ if (isset($_POST['submit'])) {
         function checkEmail(input) {
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if (re.test(input.value.trim())) {
-                return
+                return true
             } else {
                 showError(input, 'Email is not valid');
             }
+
         }
 
 
-        function checkRequired(inputArr) {
-            inputArr.forEach(function (input) {
-                if (input.value.trim() === '') {
-                    showError(input, `${getFieldName(input)} is required`);
-                } else {
-                    removeError(input)
-                }
-            });
-        }
 
 
         function checkLength(input, min, max) {
@@ -169,6 +163,7 @@ if (isset($_POST['submit'])) {
                 );
             } else {
                 removeError(input)
+                return true
             }
         }
 
@@ -181,11 +176,13 @@ if (isset($_POST['submit'])) {
 
         form.addEventListener("submit", function (e) {
 
-            console.log('success')
-
-            checkRequired([email, password]);
-            checkLength(password, 4, 25);
-            checkEmail(email);
+            if (
+                checkLength(password, 4, 25) &&
+                checkEmail(email)
+            )
+                return true
+            else
+                e.preventDefault();
         });
 
     </script>

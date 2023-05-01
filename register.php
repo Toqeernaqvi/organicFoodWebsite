@@ -3,11 +3,11 @@
 include "lib/connection.php";
 $result = null;
 if (isset($_POST['u_submit'])) {
-    $f_name = $_POST['u_name'];
-    $l_name = $_POST['l_name'];
+    $f_name = $_POST['first_name'];
+    $l_name = $_POST['last_name'];
     $email = $_POST['email'];
-    $pass = ($_POST['pass']);
-    $cpass = ($_POST['c_pass']);
+    $pass = ($_POST['password']);
+    $cpass = ($_POST['confirm_password']);
     if ($pass == $cpass) {
         $insertSql = "INSERT INTO users(f_name ,l_name, email, pass) VALUES ('$f_name', '$l_name','$email', '$pass')";
 
@@ -66,12 +66,12 @@ if (isset($_POST['u_submit'])) {
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0 position-relative">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name" name="first name">
+                                            placeholder="First Name" name="first_name">
                                         <small>Error message</small>
                                     </div>
                                     <div class="col-sm-6 position-relative ">
                                         <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name" name="last name">
+                                            placeholder="Last Name" name="last_name">
                                         <small>Error message</small>
 
                                     </div>
@@ -91,7 +91,8 @@ if (isset($_POST['u_submit'])) {
                                     </div>
                                     <div class="col-sm-6 mb-4 position-relative">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password" name="password">
+                                            id="exampleRepeatPassword" placeholder="Repeat Password"
+                                            name="confirm_password">
                                         <small>Error message</small>
                                     </div>
 
@@ -139,7 +140,7 @@ if (isset($_POST['u_submit'])) {
         function checkEmail(input) {
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if (re.test(input.value.trim())) {
-                return
+                return true
             } else {
                 showError(input, 'Email is not valid');
             }
@@ -147,13 +148,16 @@ if (isset($_POST['u_submit'])) {
 
 
         function checkRequired(inputArr) {
-            inputArr.forEach(function (input) {
+            for (let i = 0; i < inputArr.length; i++) {
+                const input = inputArr[i];
                 if (input.value.trim() === '') {
                     showError(input, `${getFieldName(input)} is required`);
+                    return false;
                 } else {
-                    removeError(input)
+                    removeError(input);
                 }
-            });
+            }
+            return true;
         }
 
 
@@ -170,6 +174,7 @@ if (isset($_POST['u_submit'])) {
                 );
             } else {
                 removeError(input)
+                return true
             }
         }
 
@@ -178,6 +183,8 @@ if (isset($_POST['u_submit'])) {
         function checkPasswordsMatch(input1, input2) {
             if (input1.value !== input2.value) {
                 showError(input2, 'Passwords do not match');
+            } else {
+                return true
             }
         }
 
@@ -189,13 +196,19 @@ if (isset($_POST['u_submit'])) {
 
         form.addEventListener("submit", function (e) {
 
-            checkRequired([firstName, lastName, email, password1, password2]);
-            checkLength(firstName, 3, 15);
-            checkLength(lastName, 3, 15);
-            checkLength(password1, 6, 25);
-            checkLength(password2, 6, 25);
-            checkEmail(email);
-            checkPasswordsMatch(password1, password2);
+            if (
+                checkRequired([firstName, lastName, email, password1, password2]) &&
+                checkLength(firstName, 3, 15) &&
+                checkLength(lastName, 3, 15) &&
+                checkLength(password1, 6, 25) &&
+                checkLength(password2, 6, 25) &&
+                checkEmail(email) &&
+                checkPasswordsMatch(password1, password2)
+            )
+                return true
+            else {
+                e.preventDefault();
+            }
         });
 
     </script>
