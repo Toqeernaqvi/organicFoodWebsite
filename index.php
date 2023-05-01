@@ -84,23 +84,23 @@ if (isset($_POST['add_to_cart'])) {
     </div>
   </div>
   <div class="container">
-    <div class="row">
+    <div class="row product">
       <?php
       if (mysqli_num_rows($result) > 0) {
         // output data of each row
         while ($row = mysqli_fetch_assoc($result)) {
           ?>
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <div class="col-md-3 col-sm-6 col-6">
+            <div>
               <div>
-                <img src="admin/product_img/<?php echo $row['imgname']; ?>">
+                <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img">
               </div>
               <div>
                 <div>
-                  <h6>
+                  <h6 class="mb-1">
                     <?php echo $row["name"] ?>
                   </h6>
-                  <span>$
+                  <span class="mb-4">RM
                     <?php echo $row["Price"] ?>
                   </span>
                   <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid']; ?>">
@@ -108,9 +108,10 @@ if (isset($_POST['add_to_cart'])) {
                   <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
                   <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
                 </div>
-                <input type="submit" class="btn btn btn-primary" value="add to cart" name="add_to_cart">
+                <div class="product-btn">
+                  <button class="mt-2">Add to Cart</button>
+                </div>
               </div>
-
             </div>
           </form>
           <?php
@@ -123,100 +124,6 @@ if (isset($_POST['add_to_cart'])) {
     </div>
   </div>
 </section>
-
-
-<!---top sell end---->
-
-
-<!---logo start--->
-<!-- 
-<div class="logo5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-1">
-  
-      </div>
-      <div class="col-md-2 text-center">
-        <img src="img/logo1.png">
-      </div>
-      <div class="col-md-2 text-center">
-        <img src="img/logo2.png">
-      </div>
-      <div class="col-md-2 text-center">
-        <img src="img/logo3.png">
-      </div>
-      <div class="col-md-2 text-center">
-        <img src="img/logo4.png">
-      </div>
-      <div class="col-md-2 text-center">
-        <img src="img/logo5.png">
-      </div>
-      <div class="col-md-1">
-  
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-
-<!---logo end--->
-
-<!---welcome start--->
-
-<!-- <div class="welcome">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-lg-6 col-sm-12">
-        <span class="welcometitle">Welcome to Lawyers Pro</span>
-        <img src="img/titleful.png">
-        <img src="img/titleline.png" class="titleline">
-
-        <div class="row" id="wel1">
-          <div class="col-md-2 col-lg-2 col-2">
-            <img src="img/w1.png" class="w" class="img-fluid">
-          </div>
-          <div class="col-md-10  col-lg-10 col-10">
-            <h6 class="wh">24x7 online free support</h6>
-            <p class="wp">There are many variations of passages Lorem Ipsum available<br>
-            but they are many variations </p>
-          </div>   
-        </div>
-
-         <div class="row" id="wel2">
-          <div class="col-md-2 col-lg-2 col-2">
-            <img src="img/w1.png" class="w" class="img-fluid">
-          </div>
-          <div class="col-md-10  col-lg-10 col-10">
-            <h6 class="wh">24x7 online free support</h6>
-            <p class="wp">There are many variations of passages Lorem Ipsum available<br>
-            but they are many variations </p>
-          </div>   
-        </div>
-
-        <div class="row" id="wel2">
-          <div class="col-md-2 col-lg-2 col-2">
-            <img src="img/w1.png" class="w" class="img-fluid">
-          </div>
-          <div class="col-md-10  col-lg-10 col-10">
-            <h6 class="wh">24x7 online free support</h6>
-            <p class="wp">There are many variations of passages Lorem Ipsum available<br>
-            but they are many variations </p>
-          </div>   
-        </div>
-
-      </div>
-      <div class="col-md-12 col-lg-6 col-sm-12">
-        <img src="img/comment.png" class="img-fluid">
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-
-<!---welcome end--->
-
 
 
 <?php

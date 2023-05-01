@@ -13,32 +13,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
   <!--font-family: 'Raleway', sans-serif;-->
   <link rel="favicon" type="text/css" href="#favicon">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/responsive.css">
-
-
-
-
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
 
   <!--header start--->
   <header>
-    <!-- <div class="container">
-    <div class="header-top">
-      
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <a href=""><img src="img/logo-1.png" class="logo"></a>
-          </div>
-        </div>
-    
-    </div>
-    </div>
-  </header>
-  <div class="line">
-  </div>  -->
     <?php
     SESSION_START();
     include "lib/connection.php";
@@ -64,10 +46,10 @@
               <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Clothing.php"> Clothing</a>
+              <a class="nav-link" href="vegetables.php"> Vegetables</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Trends.php">Trends</a>
+              <a class="nav-link" href="fruits.php">Fruits</a>
             </li>
           </ul>
           <form class="form-inline" action="search(1).php" method="post">
@@ -86,7 +68,7 @@
             }
           }
           ?>
-          <a href="cart(1).php"><img src="img/cart.png">
+          <a href="cart(1).php" class="mr-2"><img src="img/cart.png">
             <?php echo $total ?>
           </a>
           <?php
@@ -94,8 +76,8 @@
           if (isset($_SESSION['auth'])) {
             if ($_SESSION['auth'] == 1) {
               echo $_SESSION['username']; ?>
-              <a href="profile.php">(My Orders)</a>
-              <a href="logout.php">(logout)</a>
+              <a href="profile.php" class="btn btn-primary ml-3">My Orders</a>
+              <a href="logout.php" class="btn btn-info ml-2">logout</a>
               <?php
             }
           } else {

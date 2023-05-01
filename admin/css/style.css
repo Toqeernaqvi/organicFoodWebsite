@@ -1,22 +1,25 @@
 body {
   background-color: #f9f9f9;
 }
+
 .header {
   width: 100%;
   height: 100px;
   background-color: white;
   transition: 0.3s;
 }
+
 .sidenav {
   height: 100%;
-  width: 0px;
-  background-color: #0e1a35;
+  width: 250px;
+  background-color: rgb(47, 123, 47);
   position: fixed;
   z-index: 1;
   left: 0;
   overflow: hidden;
   transition: 0.3s;
 }
+
 .sidenav ul li {
   padding-top: 10px;
   padding-left: 30px;

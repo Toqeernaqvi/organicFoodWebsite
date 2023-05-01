@@ -2,37 +2,30 @@
 
 include "lib/connection.php";
 $result = null;
-  if (isset($_POST['u_submit'])) 
-  {
-    $f_name=$_POST['u_name'];
-    $l_name=$_POST['l_name'];
-    $email=$_POST['email'];
+if (isset($_POST['u_submit'])) {
+    $f_name = $_POST['u_name'];
+    $l_name = $_POST['l_name'];
+    $email = $_POST['email'];
     // $pass=md5($_POST['pass']);
     // $cpass=md5($_POST['c_pass']);
-    $pass=($_POST['pass']);
-    $cpass=($_POST['c_pass']);
-    if ($pass==$cpass) 
-    {
-         $insertSql = "INSERT INTO users(f_name ,l_name, email, pass) VALUES ('$f_name', '$l_name','$email', '$pass')";
+    $pass = ($_POST['pass']);
+    $cpass = ($_POST['c_pass']);
+    if ($pass == $cpass) {
+        $insertSql = "INSERT INTO users(f_name ,l_name, email, pass) VALUES ('$f_name', '$l_name','$email', '$pass')";
 
-         if ($conn -> query ($insertSql)) 
-         {
-            $result="Account Open success";
+        if ($conn->query($insertSql)) {
+            $result = "Account Open success";
             header("location:login.php");
-         }
-         else
-         {
-             die($conn -> error);
-         }
+        } else {
+            die($conn->error);
+        }
+    } else {
+        $result = "Password Not Match";
     }
-    else
-    {
-      $result="Password Not Match";
-    }
-  } 
+}
 
 
- //echo $result_std -> num_rows;
+//echo $result_std -> num_rows;
 
 
 ?>
@@ -48,7 +41,8 @@ $result = null;
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>411</title>
 
 
@@ -59,17 +53,17 @@ $result = null;
 
     <div class="container">
 
-     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-7">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-                                <?php echo $result;  ?>
-                            </div>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <div class="card o-hidden border-0 ">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="">
+                        <div class="col-lg-7 shadow-lg my-5 mx-auto">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                    <?php echo $result; ?>
+                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName"
@@ -94,19 +88,21 @@ $result = null;
                                             id="exampleRepeatPassword" placeholder="Repeat Password" name="c_pass">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-user btn-block mb-4" name="u_submit">Register Account</button>
-                            
+                                <button type="submit" class="btn btn-primary btn-user btn-block mb-4"
+                                    name="u_submit">Register Account</button>
 
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+
+                                <hr>
+                                <div class="text-center px-8 py-2 shadow-none bg-light rounded">
+                                    <a class="small  " href="login.html">Already have an
+                                        account? Login!</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
 
     </div>
 

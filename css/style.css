@@ -263,8 +263,6 @@ p {
 
 /***subs end***/
 
-.footer p {
-}
 .footer1 {
   margin-top: 35px;
   margin-bottom: 42px;
@@ -315,4 +313,71 @@ p {
 .last-pic {
   position: absolute;
   margin-top: -8px;
+}
+
+/* Product CSS Section */
+.product {
+  gap: 20px;
+}
+
+.product-btn button {
+  background-color: #8beb8c !important;
+  border: none;
+  padding: 10px 20px;
+}
+
+.product-btn button:focus {
+  outline: none;
+}
+
+img.product-img {
+  max-width: 250px;
+  height: 325px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+img.product-img:hover {
+  scale: 1.1;
+}
+
+div:has(.product-img) {
+  overflow: hidden;
+}
+
+/* =========== about us Section ================  */
+
+.about-us-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+    url(../img/about.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 22rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us-header h1 {
+  text-align: center;
+  color: #8beb8c;
+  font-size: 64px;
+}
+
+.our-mission,
+.our-history {
+  max-width: 1200px;
+  margin: 5rem auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-img img {
+  width: 500px;
+  /* height: 300px; */
 }
