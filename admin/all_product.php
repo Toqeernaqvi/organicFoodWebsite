@@ -54,6 +54,7 @@ if (isset($_GET['remove'])) {
     <table class="table">
       <thead>
         <tr>
+        <th scope="col">Id</th>
           <th scope="col">Image</th>
           <th scope="col">Name</th>
           <th scope="col">Catagory</th>
@@ -70,6 +71,7 @@ if (isset($_GET['remove'])) {
           while ($row = mysqli_fetch_assoc($result)) {
             ?>
             <tr>
+              <td><?php echo $row['id']; ?></td>
               <td><img src="product_img/<?php echo $row['imgname']; ?>" style="width:50px;"></td>
               <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <input type="hidden" name="update_id" value="<?php echo $row['id']; ?>">

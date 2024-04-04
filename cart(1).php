@@ -3,24 +3,24 @@
  include'lib/connection.php';
 
 
-if(isset($_SESSION['auth']))
-{
-   if($_SESSION['auth']!=1)
-   {
-       header("location:login.php");
-   }
-}
-else
-{
-   header("location:login.php");
-}
+// if(isset($_SESSION['auth']))
+// {
+//    if($_SESSION['auth']!=1)
+//    {
+//        header("location:login.php");
+//    }
+// }
+// else
+// {
+//    header("location:login.php");
+// }
 if(isset($_POST['order_btn'])){
   $userid = $_POST['user_id'];
   $name = $_POST['user_name'];
   $number = $_POST['number'];
   $address = $_POST['address'];
   $mobnumber = $_POST['mobnumber'];
-  $txid = $_POST['txid'];
+  $email = $_POST['email'];
   /*$price_total = $_POST['total'];*/
   $status="pending";
 
@@ -65,7 +65,7 @@ if(isset($_POST['order_btn'])){
      if($flag==1)
      {
        $total_product = implode(', ',$product_name);
-       $detail_query = mysqli_query($conn, "INSERT INTO `orders`(userid, name, address, phone,  mobnumber, txid, totalproduct, totalprice, status) VALUES('$userid','$name','$address','$number','$mobnumber','$txid','$total_product','$price_total','$status')") or die($conn -> error);
+       $detail_query = mysqli_query($conn, "INSERT INTO `orders`(userid, name, address, phone,  mobnumber, email, totalproduct, totalprice, status) VALUES('$userid','$name','$address','$number','$mobnumber','$txid','$total_product','$price_total','$status')") or die($conn -> error);
            
              $cart_query1 = mysqli_query($conn, "delete FROM `cart` where userid='$userid'");
              header("location:index.php");
@@ -161,7 +161,13 @@ if(isset($_GET['remove'])){
 <tbody>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
-        <h5>If Cash On delivary Then Put 0 in bkash Field</h5>
+        <h5>Payment Method</h5>
+        <input type="radio" id="cod" name="cod" value="Cash on Delivery">
+        <label for="cod">Cash On Delivery</label><br>
+        <input type="radio" id="online_transfer" name="online_transfer" value="online_transfer">
+        <label for="online_transfer">Online Transfer</label><br>
+        
+
       <div class="input-group form-group">
       <input type="hidden" name="total" value="<?php echo $total ?>">
       <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid']; ?>">
@@ -172,10 +178,7 @@ if(isset($_GET['remove'])){
         <input type="number" class="form-control" placeholder="Phone Number" name="number">
        </div>
        <div class="input-group form-group">
-        <input type="number" class="form-control" placeholder="Bkash/Nogod/Rocket Number" name="mobnumber">
-       </div>
-       <div class="input-group form-group">
-        <input type="text" class="form-control" placeholder="Txid" name="txid">
+        <input type="text" class="form-control" placeholder="email" name="email">
        </div>
 
       <div class="form-group">
