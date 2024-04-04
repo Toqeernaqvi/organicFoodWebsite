@@ -11,7 +11,9 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
-  <!--font-family: 'Raleway', sans-serif;-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="favicon" type="text/css" href="#favicon">
   <link rel="stylesheet" type="text/css" href="css/responsive.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -38,28 +40,30 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <a href="index.php"><img src="img/logo-1.png" class="logo"></a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <a href=""><img src="img/logo-1.png" class="logo"></a>
-
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="vegetables.php"> Vegetables</a>
+              <a class="nav-link" href="watches.php">Watches</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="fruits.php">Fruits</a>
+              <a class="nav-link" href="men_jewelry.php">Men jewelry</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="women_jewelry.php">Women jewelry</a>
+            </li>
+            <!-- <li class="nav-item">
               <a class="nav-link" href="about-us.php">About US</a>
-            </li>
+            </li> -->
           </ul>
           <form class="form-inline" action="search(1).php" method="post">
             <!--<a href=""><img src="img/search.png"></a>-->
-            <input class="form-control border border-secondary" type="search" placeholder="Search" aria-label="Search"
+            <input class="form-control rounded-0" type="search" placeholder="Search" aria-label="Search"
               name="name">
-            <button class="btn btn-outline-dark" type="submit" style="margin-left:7px;margin-right:7px;"><img
+            <button class="btn border rounded-0" type="submit" style="margin-left:7px;margin-right:7px;"><img
                 src="img/search.png"></button>
           </form>
           <?php
@@ -72,29 +76,13 @@
           }
           ?>
 
-          <a href="cart(1).php" class="mr-2"><img src="img/cart.png">
-            <span class="badge badge-warning">
-              <?php echo $total ?>
-            </span>
-          </a>
-
-          <?php
-
-          if (isset($_SESSION['auth'])) {
-            if ($_SESSION['auth'] == 1) {
-              echo $_SESSION['username']; ?>
-              <a href="profile.php" class="btn btn-primary ml-3">My Orders</a>
-              <a href="logout.php" class="btn btn-info ml-2">logout</a>
-              <?php
-            }
-          } else {
-            ?>
-            <a href="login.php" class="btn btn btn-primary ml-4">Login</a>
-            <a href="Register.php" class="btn btn btn-info ml-2 ">Signup</a>
-            <?php
-          }
-          ?>
-        </div>
+      </div>
+        <a href="cart(1).php" class="mr-2"><img src="img/cart.png">
+          <span class="badge badge-warning">
+            <?php echo $total ?>
+          </span>
+        </a>
+        <a href="profile.php" class="btn btn-primary ml-3">My Orders</a>
       </div>
     </nav>
 

@@ -2,7 +2,8 @@
 include 'header.php';
 include 'lib/connection.php';
 
-$sql = "SELECT * FROM product";
+
+$sql = "SELECT * FROM product where catagory = 'watches'";
 $result = $conn->query($sql);
 
 if (isset($_POST['add_to_cart'])) {
@@ -35,48 +36,16 @@ if (isset($_POST['add_to_cart'])) {
 }
 ?>
 
-
-
-<!--banner start-->
-<div class="banner" id="banner">
-  <div class="">
-    <div class="">
-      <!-- <div class="col-md-6">
-
-        <<div class="banner-text">
-          <h1 class="bt1">Welcome To</h1>
-          <h1 class="bt2"><span class="bt3">Organic</span>Food</h1>
-          <p class="bt4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et mi <br>vulputate gen
-            vehicula maximus sagittis rhoncus tortor. Class </p>
-        </div> 
-
-      </div> -->
-
-      <div class="">
-        <img src="./img/header.webp" class="bg-img">
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!--banner end-->
-
-
-<!---top sell start---->
-
 <section>
   <div class="container">
     <div class="topsell-head">
-      <div class="row">
+      <div class="row r">
         <div class="col-md-12 text-center">
           <img src="img/mark.png">
-          <h4>All Products</h4>
-          <p>A passage of Lorem Ipsum you need here</p>
-
+          <h4>Watches</h4>
+          <p>A passage of watches you need here</p>
         </div>
       </div>
-
     </div>
   </div>
   <div class="all-products">
@@ -119,7 +88,6 @@ if (isset($_POST['add_to_cart'])) {
     </div>
   </div>
 </section>
-
 
 <?php
 include 'footer.php';

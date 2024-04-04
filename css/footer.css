@@ -1,7 +1,7 @@
 footer {
-  background: rgb(47, 123, 47);
-  color: #fff;
-  margin-top: 30px;
+  background: #FAEAE5;
+  color: #7c7c7c;
+  margin-top: 40px;
 }
 
 footer > .footer {
@@ -28,9 +28,14 @@ footer > div > p {
   gap: 20px;
 }
 
+.social-links > a > img{
+  width: 30px;
+}
+
+
 .copyright {
-  background: rgb(26, 52, 26);
-  color: rgb(200, 200, 200);
+  background: #dfd0cc;
+  color: rgb(82, 82, 82);
   padding: 6px 0;
   text-align: center;
 }

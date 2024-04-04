@@ -9,12 +9,11 @@
     <div class="social-links">
       <a href="#"><img src="./img/icons8-instagram.svg" alt="instagram logo"></a>
       <a href="#"><img src="./img/icons8-linkedin.svg" alt="linkedin logo"></a>
-      <a href="#"><img src="./img/icons8-pinterest.svg" alt="pinterest logo"></a>
       <a href="#"><img src="./img/icons8-twitter.svg" alt="twitter logo"></a>
       <a href="#"><img src="./img/icons8-youtube.svg" alt="youtube logo"></a>
     </div>
   </div>
-  <div class="copyright">&copy; Copyright 2023. All right reserved.</div>
+  <div class="copyright">&copy; Copyright 2024. All right reserved.</div>
 </footer>
 <!-- Footer -->
 

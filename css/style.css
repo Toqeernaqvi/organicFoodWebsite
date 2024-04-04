@@ -3,6 +3,11 @@
   src: url("../fonts/antonio-bold.ttf");
 }
 
+body{
+  margin: 0;
+  padding: 0;
+}
+
 /**header-top start**/
 
 .line {
@@ -26,21 +31,30 @@
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
 }
+
 .navbar-light .navbar-nav .nav-link {
-  color: rgb(0, 0, 0);
+  color: rgb(56, 56, 56);
+  font-size: .9rem;
+  letter-spacing: 1px;
 }
+
 .form-inline a {
   padding-right: 15px;
 }
 /**nav end**/
 
 /**banner start**/
-.banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
-    url(../img/header-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+
+.bg-img{
+  max-height: 80vh;
+  width: 100%;
+  object-fit: contain;
 }
+
+h1{
+  font-family: "Merriweather", 'serif';
+}
+
 .bt1 {
   margin-top: 100px;
   font-family: antonio;
@@ -317,14 +331,29 @@ p {
 }
 
 /* Product CSS Section */
+
+.all-products{
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+  .all-products{
+    margin: 0 40px;
+  }}
+
 .product {
-  gap: 20px;
+  gap: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .product-btn {
   background-color: #8beb8c !important;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 20px; 
 }
 
 .product-btn button:focus {
@@ -332,8 +361,8 @@ p {
 }
 
 img.product-img {
-  max-width: 250px;
-  height: 325px;
+  width: 250px;
+  height: 250px;
   cursor: pointer;
   transition: 0.5s;
 }
@@ -344,6 +373,30 @@ img.product-img:hover {
 
 div:has(.product-img) {
   overflow: hidden;
+}
+
+.product-category{
+  color: #616161;
+  font-size: .8rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 12px 0 16px 0;
+
+}
+
+.product-name{
+  color: #4e657b;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.product-price{
+  color: #333;
+  font-weight: 600;
+  text-align: center;
 }
 
 /* =========== about us Section ================  */
