@@ -40,7 +40,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <a href="index.php"><img src="img/logo-1.png" class="logo"></a>
+        <a href="index.php"><img src="img/logo.png" class="logo"></a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -82,7 +82,7 @@
             <?php echo $total ?>
           </span>
         </a>
-        <a href="profile.php" class="btn btn-primary ml-3">My Orders</a>
+        <!-- <a href="profile.php" class="btn ml-3">My Orders</a> -->
       </div>
     </nav>
 

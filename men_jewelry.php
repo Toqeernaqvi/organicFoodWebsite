@@ -3,7 +3,7 @@ include 'header.php';
 include 'lib/connection.php';
 
 
-$sql = "SELECT * FROM product where catagory = 'Watches'";
+$sql = "SELECT * FROM product where catagory = 'men jewelry'";
 $result = $conn->query($sql);
 
 if (isset($_POST['add_to_cart'])) {

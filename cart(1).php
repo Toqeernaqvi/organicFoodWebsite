@@ -100,7 +100,7 @@ if(isset($_GET['remove'])){
 ?>
 
 <div class="container pendingbody">
-  <h5>cart</h5>
+  <h5 class="mb-5">cart</h5>
 <table class="table">
   <thead>
     <tr>
@@ -126,10 +126,10 @@ if(isset($_GET['remove'])){
   
       <td><form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <input type="hidden" name="update_quantity_id"  value="<?php echo  $row['id']; ?>" >
-        <input type="number" name="update_quantity" min="1"  value="<?php echo $row['quantity']; ?>" >
+        <input type="number" name="update_quantity" min="1"  value="<?php echo $row['quantity']; ?>" class="w-25" >
         <input type="submit" value="update" name="update_update_btn">
       </form></td> 
-      <td><?php echo $row["price"]*$row["quantity"]  ?></td>
+      <td>Rs&nbsp;<?php echo $row["price"]*$row["quantity"]  ?></td>
       <?php $total=$total+$row["price"]*$row["quantity"] ;?>
      
 

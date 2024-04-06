@@ -107,7 +107,7 @@ if (isset($_POST['add_to_cart'])) {
                   <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
                   <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
                 </div>
-                <!-- <input type="submit" class="btn btn-primary mt-2" value="add to cart" name="add_to_cart"> -->
+                <input type="submit" class="btn btn-primary mt-2" value="add to cart" name="add_to_cart">
               </div>
             </div>
           </form>

@@ -3,7 +3,7 @@
 <!-- Footer -->
 <footer>
   <div class="footer">
-    <img src="./img/logo-1.png" alt="logo">
+    <img src="./img/logo.png" alt="logo">
     <p>Our commitment to providing
       fresh, nutritious, and organic produce means that you can trust every bite you take.</p>
     <div class="social-links">

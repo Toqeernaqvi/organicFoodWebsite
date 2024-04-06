@@ -22,7 +22,7 @@ body{
 /**nav start**/
 
 .logo {
-  height: 70px;
+  height: 90px;
   margin-right: 20px;
 }
 
@@ -450,4 +450,11 @@ small.error {
   color: red;
   border: none;
   display: inline;
+}
+
+
+/* ========================  Cart ============================= */
+
+.cart-quantity{
+  width: 30px;
 }
