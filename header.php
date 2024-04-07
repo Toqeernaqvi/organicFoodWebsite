@@ -49,11 +49,23 @@
             <li class="nav-item">
               <a class="nav-link" href="watches.php">Watches</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="men_jewelry.php">Men jewelry</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="men_jewelry.php" data-toggle="dropdown">Men jewelry</a>
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="women_jewelry.php">Page 1-1</a></li>
+                <li><a href="#">Page 1-2</a></li>
+                <li><a href="#">Page 1-3</a></li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="women_jewelry.php">Women jewelry</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="women_jewelry.php" data-toggle="dropdown">Men jewelry</a>
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="women_jewelry.php">Page 1-1</a></li>
+                <li><a href="#">Page 1-2</a></li>
+                <li><a href="#">Page 1-3</a></li>
+              </ul>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="about-us.php">About US</a>
@@ -61,8 +73,7 @@
           </ul>
           <form class="form-inline" action="search(1).php" method="post">
             <!--<a href=""><img src="img/search.png"></a>-->
-            <input class="form-control rounded-0" type="search" placeholder="Search" aria-label="Search"
-              name="name">
+            <input class="form-control rounded-0" type="search" placeholder="Search" aria-label="Search" name="name">
             <button class="btn border rounded-0" type="submit" style="margin-left:7px;margin-right:7px;"><img
                 src="img/search.png"></button>
           </form>
@@ -76,7 +87,7 @@
           }
           ?>
 
-      </div>
+        </div>
         <a href="cart(1).php" class="mr-2"><img src="img/cart.png">
           <span class="badge badge-warning">
             <?php echo $total ?>

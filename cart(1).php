@@ -101,92 +101,92 @@ if(isset($_GET['remove'])){
 
 <div class="container pendingbody">
   <h5 class="mb-5">cart</h5>
-<table class="table">
-  <thead>
-    <tr>
-      <!-- <th scope="col">#</th> -->
-      <th scope="col">Name</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Price</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
    $total=0;
           if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
               ?>
 
-    <tr>
-              
-      <!-- <th scope="row">1</th> -->
-      <td><?php echo $row["name"] ?></td>
-  
-      <td><form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <input type="hidden" name="update_quantity_id"  value="<?php echo  $row['id']; ?>" >
-        <input type="number" name="update_quantity" min="1"  value="<?php echo $row['quantity']; ?>" class="w-25" >
-        <input type="submit" value="update" name="update_update_btn">
-      </form></td> 
-      <td>Rs&nbsp;<?php echo $row["price"]*$row["quantity"]  ?></td>
-      <?php $total=$total+$row["price"]*$row["quantity"] ;?>
-     
+      <tr>
+        <!-- <th scope="row">1</th> -->
+        <td><?php echo $row["name"] ?></td>
 
-      <input type="hidden" name="status" value="pending">   
-      <td><a href="cart(1).php?remove=<?php echo $row['id']; ?>">remove</a></td>
-    </tr>
-    <?php 
+        <td>
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <input type="hidden" name="update_quantity_id" value="<?php echo  $row['id']; ?>">
+            <input type="number" name="update_quantity" min="1" value="<?php echo $row['quantity']; ?>"
+              class="w-25 rounded-0 border d-inline-flex focus-ring">
+            <input type="submit" value="update" name="update_update_btn" class="border d-inline-flex focus-ring"
+              style={background: "#FAEAE5" }>
+          </form>
+        </td>
+        <td>Rs&nbsp;<?php echo $row["price"]*$row["quantity"]  ?></td>
+        <?php $total=$total+$row["price"]*$row["quantity"] ;?>
+        <input type="hidden" name="status" value="pending">
+        <td><a href="cart(1).php?remove=<?php echo $row['id']; ?>">remove</a></td>
+      </tr>
+      <?php 
     }
-    
         } 
         else 
             echo "No Products in the Cart";
         ?>
-  
-  </tbody>
-</table>
-<style>
-.myDiv {
-  background-color: lightblue;    
-  text-align: right;
-}
-</style>
+
+    </tbody>
+  </table>
+  <style>
+  .myDiv {
+    background-color: lightblue;
+    text-align: right;
+  }
+  </style>
 
 
-<div class="myDiv">
-<?php echo "<h style='font-size: 24px;'>Total Amount= $total</h>"; ?>
-</div>
+  <div class="myDiv">
+    <?php echo "<h style='font-size: 24px;'>Total Amount= $total</h>"; ?>
+  </div>
 
-<tbody>
+  <tbody>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
-        <h5>Payment Method</h5>
-        <input type="radio" id="cod" name="cod" value="Cash on Delivery">
+      <h5>Payment Method</h5>
+      <input type="radio" id="cod" name="cod" value="Cash on Delivery">
         <label for="cod">Cash On Delivery</label><br>
         <input type="radio" id="online_transfer" name="online_transfer" value="online_transfer">
         <label for="online_transfer">Online Transfer</label><br>
-        
+       
 
       <div class="input-group form-group">
-      <input type="hidden" name="total" value="<?php echo $total ?>">
-      <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid']; ?>">
-      <input type="hidden" name="user_name" value="<?php echo $_SESSION['username']; ?>">
+        <input type="hidden" name="total" value="<?php echo $total ?>">
+        <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid']; ?>">
+        <input type="hidden" name="user_name" value="<?php echo $_SESSION['username']; ?>">
         <input type="text" class="form-control" placeholder="Address" name="address">
-       </div>
-       <div class="input-group form-group">
+      </div>
+      <div class="input-group form-group">
         <input type="number" class="form-control" placeholder="Phone Number" name="number">
-       </div>
-       <div class="input-group form-group">
+      </div>
+      <div class="input-group form-group">
         <input type="text" class="form-control" placeholder="email" name="email">
-       </div>
+      </div>
 
       <div class="form-group">
-      <input type="submit" value="Order Now" name="order_btn">
-    </div>
+        <input type="submit" value="Order Now" name="order_btn">
+      </div>
 
     </form>
-      </tbody>
+  </tbody>
 </div>
 
 
