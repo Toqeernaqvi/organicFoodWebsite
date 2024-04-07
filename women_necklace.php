@@ -3,7 +3,7 @@ include 'header.php';
 include 'lib/connection.php';
 
 
-$sql = "SELECT * FROM product where catagory = 'men jewelry'";
+$sql = "SELECT * FROM product where catagory = 'women necklace'";
 $result = $conn->query($sql);
 
 if (isset($_POST['add_to_cart'])) {
@@ -42,8 +42,8 @@ if (isset($_POST['add_to_cart'])) {
       <div class="row r">
         <div class="col-md-12 text-center">
           <img src="img/mark.png">
-          <h4>Watches</h4>
-          <p>A passage of watches you need here</p>
+          <h4>Women Necklace</h4>
+          <p>A passage of necklace you need here</p>
         </div>
       </div>
     </div>
@@ -55,32 +55,32 @@ if (isset($_POST['add_to_cart'])) {
         // output data of each row
         while ($row = mysqli_fetch_assoc($result)) {
           ?>
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <div>
+          <div>
+            <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img">
+          </div>
+          <div>
             <div>
-              <div>
-                <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img">
-              </div>
-              <div>
-                <div>
-                  <h4 class="mb-1 product-category">
-                    <?php echo $row["catagory"] ?>
-                  </h4>
-                  <h5 class="mb-1 product-name">
-                    <?php echo $row["name"] ?>
-                  </h5>
-                  <h6 class="mb-4 product-price">Rs
-                    <?php echo $row["Price"] ?>
-                  </h6>
-                  <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid']; ?>">
-                  <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
-                  <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
-                  <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
-                </div>
-                <!-- <input type="submit" class="btn btn-primary mt-2" value="add to cart" name="add_to_cart"> -->
-              </div>
+              <h4 class="mb-1 product-category">
+                <?php echo $row["catagory"] ?>
+              </h4>
+              <h5 class="mb-1 product-name">
+                <?php echo $row["name"] ?>
+              </h5>
+              <h6 class="mb-4 product-price">Rs
+                <?php echo $row["Price"] ?>
+              </h6>
+              <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid']; ?>">
+              <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
+              <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
+              <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
             </div>
-          </form>
-          <?php
+            <!-- <input type="submit" class="btn btn-primary mt-2" value="add to cart" name="add_to_cart"> -->
+          </div>
+        </div>
+      </form>
+      <?php
         }
       } else
         echo "0 results";

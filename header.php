@@ -50,21 +50,23 @@
               <a class="nav-link" href="watches.php">Watches</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="men_jewelry.php" data-toggle="dropdown">Men jewelry</a>
+              <p class="nav-link dropdown-toggle" data-toggle="dropdown">Men jewelry</p>
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="women_jewelry.php">Page 1-1</a></li>
-                <li><a href="#">Page 1-2</a></li>
-                <li><a href="#">Page 1-3</a></li>
+                <li><a href="./men_watches.php">Watches</a></li>
+                <li><a href="./men_ring.php">rings</a></li>
+                <li><a href="./men_bracelet.php">bracelet</a></li>
+                <li><a href="./men_necklace.php">necklace</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="women_jewelry.php" data-toggle="dropdown">Men jewelry</a>
+              <p class="nav-link dropdown-toggle" data-toggle="dropdown">Women jewelry</p>
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="women_jewelry.php">Page 1-1</a></li>
-                <li><a href="#">Page 1-2</a></li>
-                <li><a href="#">Page 1-3</a></li>
+                <li><a href="./women_watches.php">Watches</a></li>
+                <li><a href="./women_ring.php">rings</a></li>
+                <li><a href="./women_bracelet.php">bracelet</a></li>
+                <li><a href="./women_necklace.php">necklace</a></li>
               </ul>
             </li>
             <!-- <li class="nav-item">
@@ -88,7 +90,7 @@
           ?>
 
         </div>
-        <a href="cart(1).php" class="mr-2"><img src="img/cart.png">
+        <a href="cart.php" class="mr-2"><img src="img/cart.png">
           <span class="badge badge-warning">
             <?php echo $total ?>
           </span>

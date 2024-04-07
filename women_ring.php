@@ -3,7 +3,7 @@ include 'header.php';
 include 'lib/connection.php';
 
 
-$sql = "SELECT * FROM product where catagory = 'necklace'";
+$sql = "SELECT * FROM product where catagory = 'women ring'";
 $result = $conn->query($sql);
 
 if (isset($_POST['add_to_cart'])) {
@@ -42,8 +42,8 @@ if (isset($_POST['add_to_cart'])) {
       <div class="row r">
         <div class="col-md-12 text-center">
           <img src="img/mark.png">
-          <h4>Watches</h4>
-          <p>A passage of watches you need here</p>
+          <h4>Women Rings</h4>
+          <p>A passage of rings you need here</p>
         </div>
       </div>
     </div>

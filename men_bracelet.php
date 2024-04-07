@@ -41,9 +41,9 @@ if (isset($_POST['add_to_cart'])) {
     <div class="topsell-head">
       <div class="row r">
         <div class="col-md-12 text-center">
-          <img src="img/mark.png">
-          <h4>Watches</h4>
-          <p>A passage of watches you need here</p>
+          <img src="./img/mark.png">
+          <h4>MEn Bracelets</h4>
+          <p>A passage of bracelets you need here</p>
         </div>
       </div>
     </div>
