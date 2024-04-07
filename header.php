@@ -46,27 +46,24 @@
             <li class="nav-item">
               <a class="nav-link" href="index.php">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="watches.php">Watches</a>
-            </li>
             <li class="nav-item dropdown">
-              <p class="nav-link dropdown-toggle" data-toggle="dropdown">Men jewelry</p>
+              <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Men jewelry</a>
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="./men_watches.php">Watches</a></li>
-                <li><a href="./men_ring.php">rings</a></li>
-                <li><a href="./men_bracelet.php">bracelet</a></li>
-                <li><a href="./men_necklace.php">necklace</a></li>
+                <li><a href="./men_watches.php" class="text-secondary p-2">Watches</a></li>
+                <li><a href="./men_ring.php" class="text-secondary p-2">rings</a></li>
+                <li><a href="./men_bracelet.php" class="text-secondary p-2">bracelet</a></li>
+                <li><a href="./men_necklace.php" class="text-secondary p-2">necklace</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <p class="nav-link dropdown-toggle" data-toggle="dropdown">Women jewelry</p>
+              <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Women jewelry</a>
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="./women_watches.php">Watches</a></li>
-                <li><a href="./women_ring.php">rings</a></li>
-                <li><a href="./women_bracelet.php">bracelet</a></li>
-                <li><a href="./women_necklace.php">necklace</a></li>
+                <li><a href="./women_watches.php" class="text-secondary p-2">Watches</a></li>
+                <li><a href="./women_ring.php" class="text-secondary p-2">rings</a></li>
+                <li><a href="./women_bracelet.php" class="text-secondary p-2">bracelet</a></li>
+                <li><a href="./women_necklace.php" class="text-secondary p-2">necklace</a></li>
               </ul>
             </li>
             <!-- <li class="nav-item">

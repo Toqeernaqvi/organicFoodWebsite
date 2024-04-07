@@ -127,8 +127,8 @@ if(isset($_GET['remove'])){
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <input type="hidden" name="update_quantity_id" value="<?php echo  $row['id']; ?>">
             <input type="number" name="update_quantity" min="1" value="<?php echo $row['quantity']; ?>"
-              class="w-25 rounded-0 border d-inline-flex focus-ring">
-            <input type="submit" value="update" name="update_update_btn" class="border d-inline-flex focus-ring"
+              class="w-25 rounded-0 border d-inline-flex focus-ring form-control quantity-field">
+            <input type="submit" value="update" name="update_update_btn" class="border d-inline-flex focus-ring btn"
               style={background: "#FAEAE5" }>
           </form>
         </td>
@@ -151,22 +151,37 @@ if(isset($_GET['remove'])){
     background-color: lightblue;
     text-align: right;
   }
+
+  .cart-quantity {
+    width: 30px;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  .quantity-field::-webkit-outer-spin-button,
+  .quantity-field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  .quantity-field[type=number] {
+    -moz-appearance: textfield;
+  }
   </style>
 
 
-  <div class="myDiv">
+  <div class="myDiv mb-5">
     <?php echo "<h style='font-size: 24px;'>Total Amount= $total</h>"; ?>
   </div>
 
   <tbody>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
-      <h5>Payment Method</h5>
+      <h5 class="mb-2">Payment Method</h5>
       <input type="radio" id="cod" name="cod" value="Cash on Delivery">
-        <label for="cod">Cash On Delivery</label><br>
-        <input type="radio" id="online_transfer" name="online_transfer" value="online_transfer">
-        <label for="online_transfer">Online Transfer</label><br>
-       
+      <label for="cod">Cash On Delivery</label><br>
+      <input type="radio" id="online_transfer" name="online_transfer" value="online_transfer">
+      <label for="online_transfer">Online Transfer</label><br>
 
       <div class="input-group form-group">
         <input type="hidden" name="total" value="<?php echo $total ?>">
@@ -182,7 +197,7 @@ if(isset($_GET['remove'])){
       </div>
 
       <div class="form-group">
-        <input type="submit" value="Order Now" name="order_btn">
+        <input type="submit" value="Order Now" name="order_btn" class="btn btn-primary">
       </div>
 
     </form>
