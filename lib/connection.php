@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   ="organicfoodsite";
+$db   ="rjiconicstyles";
 
 $conn = new mysqli($host, $user, $pass, $db);
 
