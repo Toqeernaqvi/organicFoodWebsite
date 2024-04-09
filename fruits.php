@@ -29,7 +29,7 @@ if (isset($_POST['add_to_cart'])) {
 
   } else {
     $insert_product = mysqli_query($conn, "INSERT INTO `cart`(userid, productid, name, quantity, price) VALUES('$user_id', '$product_id', '$product_name', '$product_quantity', '$product_price')");
-    echo $message[] = 'product added to cart succesfully';
+    echo $message[] = 'product added to cart successfully';
     header('location:index.php');
   }
 

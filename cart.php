@@ -135,7 +135,7 @@ if(isset($_GET['remove'])){
         <td>Rs&nbsp;<?php echo $row["price"]*$row["quantity"]  ?></td>
         <?php $total=$total+$row["price"]*$row["quantity"] ;?>
         <input type="hidden" name="status" value="pending">
-        <td><a href="cart(1).php?remove=<?php echo $row['id']; ?>">remove</a></td>
+        <td><a href="cart.php?remove=<?php echo $row['id']; ?>">remove</a></td>
       </tr>
       <?php 
     }
