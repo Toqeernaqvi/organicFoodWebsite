@@ -40,3 +40,7 @@ footer > div > p {
   padding: 6px 0;
   text-align: center;
 }
+
+.copyright > a{
+  color: rgb(82, 82, 82);
+}

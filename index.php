@@ -64,7 +64,6 @@ body {
 
 
 <!---top sell start---->
-
 <section>
   <div class="container">
     <div class="topsell-head">
@@ -72,11 +71,9 @@ body {
         <div class="col-md-12 text-center">
           <img src="img/mark.png">
           <h4>All Products</h4>
-          <p>A passage of Lorem Ipsum you need here</p>
-
+          <p>A passage of fashion you need here</p>
         </div>
       </div>
-
     </div>
   </div>
   <div class="all-products">
@@ -107,8 +104,8 @@ body {
               <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
               <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
               <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
+              <input type="submit" class="btn btn-primary mt-2 add-to-cart" value="add to cart" name="add_to_cart">
             </div>
-            <input type="submit" class="btn btn-primary mt-2 add-to-cart center" value="add to cart" name="add_to_cart">
 
             <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
               aria-labelledby="exampleModalLabel" aria-hidden="true">

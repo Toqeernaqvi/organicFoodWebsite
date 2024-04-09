@@ -13,7 +13,9 @@
       <a href="#"><img src="./img/icons8-youtube.svg" alt="youtube logo"></a>
     </div>
   </div>
-  <div class="copyright">&copy; Copyright 2024. All right reserved.</div>
+  <div class="copyright">&copy; Copyright 2024. Developed and designed by <a href="https://www.codewithnaqvi.com/"
+      class="text-secondary">codewithnaqvi</a>
+  </div>
 </footer>
 <!-- Footer -->
 

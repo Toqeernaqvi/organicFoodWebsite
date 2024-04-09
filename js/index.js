@@ -4,7 +4,6 @@ const productImgs = document.querySelectorAll('.product-img')
 const modalBody = document.querySelector('.modal-body')
 
 const showAlert = (e) => {
-  e.preventDefault()
   alert.style.display = "block"; 
 };
 
