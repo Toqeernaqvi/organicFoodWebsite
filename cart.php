@@ -2,7 +2,6 @@
  include'header.php';
  include'lib/connection.php';
 
-
 // if(isset($_SESSION['auth']))
 // {
 //    if($_SESSION['auth']!=1)
@@ -14,6 +13,7 @@
 // {
 //    header("location:login.php");
 // }
+
 if(isset($_POST['order_btn'])){
   $userid = $_POST['user_id'];
   $name = $_POST['user_name'];
@@ -45,13 +45,7 @@ if(isset($_POST['order_btn'])){
                 $update_id=$row['id'];
                 $t=$row['quantity']-$product_item['quantity'];
                 $update_quantity_query = mysqli_query($conn, "UPDATE `product` SET quantity = '$t' WHERE id = '$update_id'");
-                
-
                 $flag=1;
-
-
-                
-
               }
               else
               {
@@ -69,7 +63,7 @@ if(isset($_POST['order_btn'])){
        $detail_query = mysqli_query($conn, "INSERT INTO `orders`(userid, name, address, phone,    email,  payment_method, totalproduct, totalprice, status) VALUES('$userid','$name','$address','$number','$email', '$payment_method', '$total_product','$price_total','$status')") or die($conn -> error);
            
              $cart_query1 = mysqli_query($conn, "delete FROM `cart` where userid='$userid'");
-             header("location:index.php");
+             header("location:complete_order.php");
 
      }
   };
@@ -178,35 +172,22 @@ if(isset($_GET['remove'])){
   <tbody>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
-      <h5 class="mb-2">Payment Method</h5>
+      <h5 class="mb-4">Payment Method</h5>
       <input type="radio" id="cod" name="payment_method" value="cod" required>
       <label for="cod">Cash On Delivery</label><br>
       <input type="radio" id="online_transfer" name="payment_method" value="online_transfer" required>
       <label for="online_transfer">Online Transfer</label><br>
-
       <div id="account_number_field" style="display:none;">
-        <div style="display: flex; align-items: center;">
+        <div style="display: flex; align-items: center; margin-bottom: 10px">
           <img src="img/jazzcashLogo.jpg" alt="Logo"
             style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-          <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
+          <p style="margin: 0;">JazzCash Account Number: 0320-4694069</p>
         </div>
 
         <div style="display: flex; align-items: center;">
-          <img src="./img/jazzcashLogo.jpg" alt="Logo"
+          <img src="./img/ubl.webp" alt="Logo"
             style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-          <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
-        </div>
-
-        <div style="display: flex; align-items: center;">
-          <img src="img/jazzcashLogo.jpg" alt="Logo"
-            style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-          <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
-        </div>
-
-        <div style="display: flex; align-items: center;">
-          <img src="img/jazzcashLogo.jpg" alt="Logo"
-            style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-          <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
+          <p style="margin: 0;">UBL Account Number: 1938280764544</p>
         </div>
         <br>
         <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your

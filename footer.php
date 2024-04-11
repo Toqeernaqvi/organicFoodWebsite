@@ -4,8 +4,7 @@
 <footer>
   <div class="footer">
     <img src="./img/logo.png" alt="logo">
-    <p>Our commitment to providing
-      fresh, nutritious, and organic produce means that you can trust every bite you take.</p>
+    <p>Where Shopping Meets Convenience - Your One-Stop E-Commerce Destination!</p>
     <div class="social-links">
       <a href="#"><img src="./img/icons8-instagram.svg" alt="instagram logo"></a>
       <a href="#"><img src="./img/icons8-linkedin.svg" alt="linkedin logo"></a>
