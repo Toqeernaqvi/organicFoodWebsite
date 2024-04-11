@@ -67,7 +67,10 @@
               </ul>
             </li>
             <!-- <li class="nav-item">
-              <a class="nav-link" href="about-us.php">About US</a>
+              <a class="nav-link" href="index.php">Fragrances</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about-us.php">Gift</a>
             </li> -->
           </ul>
           <form class="form-inline" action="search(1).php" method="post">
