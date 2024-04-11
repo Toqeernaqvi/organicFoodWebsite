@@ -3,7 +3,7 @@ include 'header.php';
 include 'lib/connection.php';
 
 
-$sql = "SELECT * FROM product where catagory = 'women bracelet'";
+$sql = "SELECT * FROM product where category = 'women bracelet'";
 $result = $conn->query($sql);
 
 if (isset($_POST['add_to_cart'])) {
@@ -63,7 +63,7 @@ if (isset($_POST['add_to_cart'])) {
           <div>
             <div>
               <h4 class="mb-1 product-category">
-                <?php echo $row["catagory"] ?>
+                <?php echo $row["category"] ?>
               </h4>
               <h5 class="mb-1 product-name">
                 <?php echo $row["name"] ?>

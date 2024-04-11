@@ -84,7 +84,7 @@ CREATE TABLE `orders` (
 CREATE TABLE `product` (
   `id` int(100) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `catagory` varchar(100) NOT NULL,
+  `category` varchar(100) NOT NULL,
   `description` varchar(100) NOT NULL,
   `quantity` int(100) NOT NULL,
   `Price` int(100) NOT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `catagory`, `description`, `quantity`, `Price`, `imgname`) VALUES
+INSERT INTO `product` (`id`, `name`, `category`, `description`, `quantity`, `Price`, `imgname`) VALUES
 (17, 'Onion', 'Vegetables', 'khuch', 17, 50, 'onion.jpg'),
 (19, 'peas green', 'Vegetables', '', 0, 5, 'peas-green.jpg'),
 (20, 'Okra', 'Vegetables', '', 34, 12, 'okra.jpg'),

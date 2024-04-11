@@ -2,7 +2,7 @@
  include'header.php';
  include'lib/connection.php';
  $name=$_POST['name'];
- $sql = "SELECT * FROM product where name='$name'  OR catagory='$name'";
+ $sql = "SELECT * FROM product where name='$name'  OR category='$name'";
  $result = $conn -> query ($sql);
  if(isset($_POST['add_to_cart'])){
 

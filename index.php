@@ -92,7 +92,7 @@ body {
           <div>
             <div>
               <h4 class="mb-1 product-category">
-                <?php echo $row["catagory"] ?>
+                <?php echo $row["category"] ?>
               </h4>
               <h5 class="mb-1 product-name">
                 <?php echo $row["name"] ?>

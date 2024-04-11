@@ -2,7 +2,7 @@
 include 'header.php';
 include 'lib/connection.php';
 
-$sql = "SELECT * FROM product where catagory = 'fruits'";
+$sql = "SELECT * FROM product where category = 'fruits'";
 $result = $conn->query($sql);
 
 

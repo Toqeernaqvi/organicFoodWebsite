@@ -24,7 +24,7 @@
     <tr>
       <th scope="col">Image</th>
       <th scope="col">Name</th>
-      <th scope="col">Catagory</th>
+      <th scope="col">category</th>
       <th scope="col">Description</th>
       <th scope="col">Quantity</th>
       <th scope="col">Price</th>
@@ -39,7 +39,7 @@
     <tr>
       <td><img src="admin/product_img/<?php echo $row['imgname']; ?>" style="width:50px;"></td>
       <td><?php echo $row["name"] ?></td>
-      <td><?php echo $row["catagory"] ?></td>
+      <td><?php echo $row["category"] ?></td>
       <td><?php echo $row["description"] ?></td>
       <td><?php echo $row["quantity"] ?></td>
       <td><?php echo $row["Price"] ?></td>
