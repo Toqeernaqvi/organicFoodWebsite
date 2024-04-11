@@ -19,8 +19,9 @@ if(isset($_POST['order_btn'])){
   $name = $_POST['user_name'];
   $number = $_POST['number'];
   $address = $_POST['address'];
-  $mobnumber = $_POST['mobnumber'];
   $email = $_POST['email'];
+  $payment_method =  $_POST['payment_method'];
+  
   /*$price_total = $_POST['total'];*/
   $status="pending";
 
@@ -35,7 +36,7 @@ if(isset($_POST['order_btn'])){
         $result = $conn -> query ($sql);
       
         if (mysqli_num_rows($result) > 0) {
-          // output data of each row
+          // output data of each rowfvz
           while($row = mysqli_fetch_assoc($result)) {
             if($row['id']===$product_item['productid'])
             {
@@ -65,7 +66,7 @@ if(isset($_POST['order_btn'])){
      if($flag==1)
      {
        $total_product = implode(', ',$product_name);
-       $detail_query = mysqli_query($conn, "INSERT INTO `orders`(userid, name, address, phone,  mobnumber, email, totalproduct, totalprice, status) VALUES('$userid','$name','$address','$number','$mobnumber','$txid','$total_product','$price_total','$status')") or die($conn -> error);
+       $detail_query = mysqli_query($conn, "INSERT INTO `orders`(userid, name, address, phone,    email,  payment_method, totalproduct, totalprice, status) VALUES('$userid','$name','$address','$number','$email', '$payment_method', '$total_product','$price_total','$status')") or die($conn -> error);
            
              $cart_query1 = mysqli_query($conn, "delete FROM `cart` where userid='$userid'");
              header("location:index.php");
@@ -178,9 +179,9 @@ if(isset($_GET['remove'])){
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
       <h5 class="mb-2">Payment Method</h5>
-      <input type="radio" id="cod" name="payment_method" value="Cash on Delivery" required>
+      <input type="radio" id="cod" name="payment_method" value="cod" required>
       <label for="cod">Cash On Delivery</label><br>
-      <input type="radio" id="online_transfer" name="payment_method" value="Online Transfer" required>
+      <input type="radio" id="online_transfer" name="payment_method" value="online_transfer" required>
       <label for="online_transfer">Online Transfer</label><br>
 
       <div id="account_number_field" style="display:none;">
@@ -217,7 +218,7 @@ if(isset($_GET['remove'])){
         <input type="number" class="form-control" placeholder="Phone Number" name="number">
       </div>
       <div class="input-group form-group">
-        <input type="text" class="form-control" placeholder="email" name="email">
+        <input type="emaild" class="form-control" placeholder="email" name="email">
       </div>
 
       <div class="form-group">

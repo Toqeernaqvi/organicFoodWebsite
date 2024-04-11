@@ -53,8 +53,8 @@ if(isset($_GET['remove'])){
       <th scope="col">Name</th>
       <th scope="col">Address</th>
       <th scope="col">Phone</th>
-      <th scope="col">Send Money Number</th>
-      <th scope="col">Txid</th>
+      <th scope="col">payment method</th>
+      <th scope="col">email</th>
       <th scope="col">Total Product</th>
       <th scope="col">Total Price</th>
       <th scope="col">Status</th>
@@ -72,8 +72,8 @@ if(isset($_GET['remove'])){
       <td><?php echo $row["name"] ?></td>
       <td><?php echo $row["address"] ?></td>
       <td><?php echo $row["phone"] ?></td>
-      <td><?php echo $row["mobnumber"] ?></td>
-      <td><?php echo $row["txid"] ?></td>
+      <td><?php echo $row["payment_method"] ?></td>
+      <td><?php echo $row["email"] ?></td>
       <td><?php echo $row["totalproduct"] ?></td>
       <td><?php echo $row["totalprice"] ?></td>
       <td><form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
