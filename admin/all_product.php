@@ -16,11 +16,11 @@ $result = $conn->query($sql);
 
 if (isset($_POST['update_update_btn'])) {
   $name = $_POST['update_name'];
-  $catagory = $_POST['update_catagory'];
+  $category = $_POST['update_category'];
   $quantity = $_POST['update_quantity'];
   $price = $_POST['update_Price'];
   $update_id = $_POST['update_id'];
-  $update_quantity_query = mysqli_query($conn, "UPDATE `product` SET quantity = '$quantity' , name='$name' , catagory='$catagory' ,price='$price'  WHERE id = '$update_id'");
+  $update_quantity_query = mysqli_query($conn, "UPDATE `product` SET quantity = '$quantity' , name='$name' , category='$category' ,price='$price'  WHERE id = '$update_id'");
   if ($update_quantity_query) {
     header('location:all_product.php');
   }
@@ -57,7 +57,7 @@ if (isset($_GET['remove'])) {
         <th scope="col">Id</th>
           <th scope="col">Image</th>
           <th scope="col">Name</th>
-          <th scope="col">Catagory</th>
+          <th scope="col">category</th>
 
           <th scope="col">Quantity</th>
           <th scope="col">Price</th>
@@ -76,7 +76,7 @@ if (isset($_GET['remove'])) {
               <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <input type="hidden" name="update_id" value="<?php echo $row['id']; ?>">
                 <td><input type="text" name="update_name" value="<?php echo $row['name']; ?>"></td>
-                <td><input type="text" name="update_catagory" value="<?php echo $row['catagory']; ?>"></td>
+                <td><input type="text" name="update_category" value="<?php echo $row['category']; ?>"></td>
 
                 <td><input type="number" name="update_quantity" value="<?php echo $row['quantity']; ?>"></td>
                 <td> <input type="number" name="update_Price" value="<?php echo $row['Price']; ?>"></td>
