@@ -2,7 +2,9 @@
 <html>
 
 <head>
-  <title>Organic Food</title>
+  <title>Rj Iconic Styles</title>
+  <link rel="icon" type="image/png" href="img/logo.png"> <!-- Change 'favicon.png' to the path of your favicon image -->
+
   <meta charset="UTF-8">
   <meta name="description" content="test">
   <meta name="keywords" content="HTML, CSS, BOOTSTRAP">

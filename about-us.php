@@ -15,7 +15,7 @@ include 'lib/connection.php';
             <h2>Our Mission</h2>
             <p>Start by outlining your company's mission statement, which should clearly convey your commitment to
                 providing
-                high-quality organic food products to your customers. You can emphasize your commitment to
+                high-quality Rj Iconic Styles products to your customers. You can emphasize your commitment to
                 sustainability,
                 health, and ethical farming practices.</p>
         </div>

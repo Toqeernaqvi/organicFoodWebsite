@@ -29,7 +29,7 @@ if(isset($_POST['order_btn'])){
   $price_total = 0;
   if(mysqli_num_rows($cart_query) > 0){
      while($product_item = mysqli_fetch_assoc($cart_query)){
-        $product_name[] = $product_item['productid'] .' ('. $product_item['quantity'] .') ';
+        $product_name[] = $product_item['productid'] .' ('. $product_item['quantity'] .')  ('. $product_item['name'] .') ';
         $product_price = number_format($product_item['price'] * $product_item['quantity']);
         $price_total += $product_price;
         $sql = "SELECT * FROM product";
