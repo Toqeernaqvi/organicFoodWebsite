@@ -178,10 +178,34 @@ if(isset($_GET['remove'])){
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 
       <h5 class="mb-2">Payment Method</h5>
-      <input type="radio" id="cod" name="cod" value="Cash on Delivery">
+      <input type="radio" id="cod" name="payment_method" value="Cash on Delivery" required>
       <label for="cod">Cash On Delivery</label><br>
-      <input type="radio" id="online_transfer" name="online_transfer" value="online_transfer">
+      <input type="radio" id="online_transfer" name="payment_method" value="Online Transfer" required>
       <label for="online_transfer">Online Transfer</label><br>
+
+      <div id="account_number_field" style="display:none;">
+        <div style="display: flex; align-items: center;">
+          <img src="img/jazzcashlogo.jpg" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+          <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <img src="img/jazzcashlogo.jpg" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+          <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <img src="img/jazzcashlogo.jpg" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+          <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+          <img src="img/jazzcashlogo.jpg" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+          <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
+        </div>
+        <br>
+        <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+      </div>
 
       <div class="input-group form-group">
         <input type="hidden" name="total" value="<?php echo $total ?>">
@@ -208,3 +232,25 @@ if(isset($_GET['remove'])){
 <?php
  include'footer.php';
 ?>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var cashOnDeliveryRadio = document.getElementById('cod');
+    var onlineTransferRadio = document.getElementById('online_transfer');
+    var accountNumberField = document.getElementById('account_number_field');
+
+    cashOnDeliveryRadio.addEventListener('change', function() {
+        if (this.checked) {
+            accountNumberField.style.display = 'none';
+        }
+    });
+
+    onlineTransferRadio.addEventListener('change', function() {
+        if (this.checked) {
+            accountNumberField.style.display = 'block';
+        } else {
+            accountNumberField.style.display = 'none';
+        }
+    });
+});
+</script>
