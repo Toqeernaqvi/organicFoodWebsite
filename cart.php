@@ -185,26 +185,31 @@ if(isset($_GET['remove'])){
 
       <div id="account_number_field" style="display:none;">
         <div style="display: flex; align-items: center;">
-          <img src="img/jazzcashlogo.jpg" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+          <img src="img/jazzcashLogo.jpg" alt="Logo"
+            style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
           <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
         </div>
 
         <div style="display: flex; align-items: center;">
-          <img src="img/jazzcashlogo.jpg" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+          <img src="./img/jazzcashLogo.jpg" alt="Logo"
+            style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
           <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
         </div>
 
         <div style="display: flex; align-items: center;">
-          <img src="img/jazzcashlogo.jpg" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+          <img src="img/jazzcashLogo.jpg" alt="Logo"
+            style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
           <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
         </div>
 
         <div style="display: flex; align-items: center;">
-          <img src="img/jazzcashlogo.jpg" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+          <img src="img/jazzcashLogo.jpg" alt="Logo"
+            style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
           <p style="margin: 0;">JazzCash Account Number: XXXXXXXXX</p>
         </div>
         <br>
-        <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+        <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your
+          order will not be shipped until the funds have cleared in our account.</p>
       </div>
 
       <div class="input-group form-group">
@@ -235,22 +240,22 @@ if(isset($_GET['remove'])){
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    var cashOnDeliveryRadio = document.getElementById('cod');
-    var onlineTransferRadio = document.getElementById('online_transfer');
-    var accountNumberField = document.getElementById('account_number_field');
+  var cashOnDeliveryRadio = document.getElementById('cod');
+  var onlineTransferRadio = document.getElementById('online_transfer');
+  var accountNumberField = document.getElementById('account_number_field');
 
-    cashOnDeliveryRadio.addEventListener('change', function() {
-        if (this.checked) {
-            accountNumberField.style.display = 'none';
-        }
-    });
+  cashOnDeliveryRadio.addEventListener('change', function() {
+    if (this.checked) {
+      accountNumberField.style.display = 'none';
+    }
+  });
 
-    onlineTransferRadio.addEventListener('change', function() {
-        if (this.checked) {
-            accountNumberField.style.display = 'block';
-        } else {
-            accountNumberField.style.display = 'none';
-        }
-    });
+  onlineTransferRadio.addEventListener('change', function() {
+    if (this.checked) {
+      accountNumberField.style.display = 'block';
+    } else {
+      accountNumberField.style.display = 'none';
+    }
+  });
 });
 </script>

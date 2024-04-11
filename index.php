@@ -104,7 +104,7 @@ body {
               <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
               <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
               <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
-              <input type="submit" class="btn btn-primary mt-2 add-to-cart" value="add to cart" name="add_to_cart">
+              <input type="submit" class="btn btn-primary mt-2 add-to-cart" value="Add to cart" name="add_to_cart">
             </div>
 
             <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"

@@ -58,7 +58,8 @@ if (isset($_POST['add_to_cart'])) {
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <div>
           <div>
-            <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img">
+            <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img" data-toggle="modal"
+              data-target="#exampleModal">
           </div>
           <div>
             <div>
@@ -75,8 +76,27 @@ if (isset($_POST['add_to_cart'])) {
               <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
               <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
               <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
+              <input type="submit" class="btn btn-primary mt-2 add-to-cart" value="Add to cart" name="add_to_cart">
             </div>
-            <!-- <input type="submit" class="btn btn-primary mt-2" value="add to cart" name="add_to_cart"> -->
+
+            <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                  </div>
+                  <div class="modal-footer">
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </form>
