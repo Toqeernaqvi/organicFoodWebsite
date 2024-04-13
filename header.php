@@ -93,11 +93,28 @@
 
         </div>
         <a href="cart.php" class="mr-2"><img src="img/cart.png">
-          <span class="badge badge-warning">
-            <?php echo $total ?>
-          </span>
-        </a>
-        <!-- <a href="profile.php" class="btn ml-3">My Orders</a> -->
+            <span class="badge badge-warning">
+              <?php echo $total ?>
+            </span>
+          </a>
+
+          <?php
+
+          if (isset($_SESSION['auth'])) {
+            if ($_SESSION['auth'] == 1) {
+              echo $_SESSION['username']; ?>
+              <a href="profile.php" class="btn btn-primary ml-3">My Orders</a>
+              <a href="logout.php" class="btn btn-info ml-2">logout</a>
+              <?php
+            }
+          } else {
+            ?>
+            <a href="login.php" class="btn btn btn-primary ml-4">Login</a>
+            <a href="Register.php" class="btn btn btn-info ml-2 ">Signup</a>
+            <?php
+          }
+          ?>
+        </div>
       </div>
     </nav>
 

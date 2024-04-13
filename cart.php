@@ -1,18 +1,20 @@
 <?php
+ob_start();
+
  include'header.php';
  include'lib/connection.php';
 
-// if(isset($_SESSION['auth']))
-// {
-//    if($_SESSION['auth']!=1)
-//    {
-//        header("location:login.php");
-//    }
-// }
-// else
-// {
-//    header("location:login.php");
-// }
+if(isset($_SESSION['auth']))
+{
+   if($_SESSION['auth']!=1)
+   {
+       header("location:login.php");
+   }
+}
+else
+{
+   header("location:login.php");
+}
 
 if(isset($_POST['order_btn'])){
   $userid = $_POST['user_id'];
@@ -20,6 +22,9 @@ if(isset($_POST['order_btn'])){
   $number = $_POST['number'];
   $address = $_POST['address'];
   $email = $_POST['email'];
+  $city = $_POST['city'];
+  $street_address = $_POST['street_address'];
+
   $payment_method =  $_POST['payment_method'];
   
   /*$price_total = $_POST['total'];*/
@@ -60,7 +65,7 @@ if(isset($_POST['order_btn'])){
      if($flag==1)
      {
        $total_product = implode(', ',$product_name);
-       $detail_query = mysqli_query($conn, "INSERT INTO `orders`(userid, name, address, phone,    email,  payment_method, totalproduct, totalprice, status) VALUES('$userid','$name','$address','$number','$email', '$payment_method', '$total_product','$price_total','$status')") or die($conn -> error);
+       $detail_query = mysqli_query($conn, "INSERT INTO `orders`(userid, name, address, phone,  city, street_address, email,  payment_method, totalproduct, totalprice, status) VALUES('$userid','$name','$address','$number', '$city', '$street_address', '$email', '$payment_method', '$total_product','$price_total','$status')") or die($conn -> error);
            
              $cart_query1 = mysqli_query($conn, "delete FROM `cart` where userid='$userid'");
              header("location:complete_order.php");
@@ -198,13 +203,78 @@ if(isset($_GET['remove'])){
         <input type="hidden" name="total" value="<?php echo $total ?>">
         <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid']; ?>">
         <input type="hidden" name="user_name" value="<?php echo $_SESSION['username']; ?>">
-        <input type="text" class="form-control" placeholder="Address" name="address">
       </div>
+
+      <div class="input-group form-group">
+        <input type="email" class="form-control" placeholder="email" name="email">
+      </div>
+      
       <div class="input-group form-group">
         <input type="number" class="form-control" placeholder="Phone Number" name="number">
       </div>
+   
       <div class="input-group form-group">
-        <input type="emaild" class="form-control" placeholder="email" name="email">
+        <select name="city" id="city" required class="form-control" aria-label="Default select example">>
+          <option value="lahore" selected>Lahore</option>
+            <?php
+                $provinces = [
+                    "Punjab Cities" => [
+                        "Ahmed Nager Chatha", "Ahmadpur East", "Ali Khan Abad", "Alipur", "Arifwala", "Attock", "Bhera",
+                        "Bhalwal", "Bahawalnagar", "Bahawalpur", "Bhakkar", "Burewala", "Chillianwala", "Chakwal",
+                        "Chichawatni", "Chiniot", "Chishtian", "Daska", "Darya Khan", "Dera Ghazi Khan", "Dhaular",
+                        "Dina", "Dinga", "Dipalpur", "Faisalabad", "Ferozewala", "Fateh Jhang", "Ghakhar Mandi",
+                        "Gojra", "Gujranwala", "Gujrat", "Gujar Khan", "Hafizabad", "Haroonabad", "Hasilpur", "Haveli Lakha",
+                        "Jatoi", "Jalalpur", "Jattan", "Jampur", "Jaranwala", "Jhang", "Jhelum", "Kalabagh", "Karor Lal Esan",
+                        "Kasur", "Kamalia", "Kamoke", "Khanewal", "Khanpur", "Kharian", "Khushab", "Kot Addu", "Jauharabad",
+                        "Lahore", "Lalamusa", "Layyah", "Liaquat Pur", "Lodhran", "Malakwal", "Mamoori", "Mailsi",
+                        "Mandi Bahauddin", "Mian Channu", "Mianwali", "Multan", "Murree", "Muridke", "Mianwali Bangla",
+                        "Muzaffargarh", "Narowal", "Nankana Sahib", "Okara", "Renala Khurd", "Pakpattan", "Pattoki",
+                        "Pir Mahal", "Qaimpur", "Qila Didar Singh", "Rabwah", "Raiwind", "Rajanpur", "Rahim Yar Khan",
+                        "Rawalpindi", "Sadiqabad", "Safdarabad", "Sahiwal", "Sangla Hill", "Sarai Alamgir", "Sargodha",
+                        "Shakargarh", "Sheikhupura", "Sialkot", "Sohawa", "Soianwala", "Siranwali", "Talagang", "Taxila",
+                        "Toba Tek Singh", "Vehari", "Wah Cantonment", "Wazirabad"
+                    ],
+                    "Sindh Cities" => [
+                        "Badin", "Bhirkan", "Rajo Khanani", "Chak", "Dadu", "Digri", "Diplo", "Dokri", "Ghotki", "Haala",
+                        "Hyderabad", "Islamkot", "Jacobabad", "Jamshoro", "Jungshahi", "Kandhkot", "Kandiaro", "Karachi",
+                        "Kashmore", "Keti Bandar", "Khairpur", "Kotri", "Larkana", "Matiari", "Mehar", "Mirpur Khas", "Mithani",
+                        "Mithi", "Mehrabpur", "Moro", "Nagarparkar", "Naudero", "Naushahro Feroze", "Naushara", "Nawabshah",
+                        "Nazimabad", "Qambar", "Qasimabad", "Ranipur", "Ratodero", "Rohri", "Sakrand", "Sanghar", "Shahbandar",
+                        "Shahdadkot", "Shahdadpur", "Shahpur Chakar", "Shikarpaur", "Sukkur", "Tangwani", "Tando Adam Khan",
+                        "Tando Allahyar", "Tando Muhammad Khan", "Thatta", "Umerkot", "Warah"
+                    ],
+                    "Khyber Cities" => [
+                        "Abbottabad", "Adezai", "Alpuri", "Akora Khattak", "Ayubia", "Banda Daud Shah", "Bannu", "Batkhela",
+                        "Battagram", "Birote", "Chakdara", "Charsadda", "Chitral", "Daggar", "Dargai", "Darya Khan",
+                        "Dera Ismail Khan", "Doaba", "Dir", "Drosh", "Hangu", "Haripur", "Karak", "Kohat", "Kulachi",
+                        "Lakki Marwat", "Latamber", "Madyan", "Mansehra", "Mardan", "Mastuj", "Mingora", "Nowshera", "Paharpur",
+                        "Pabbi", "Peshawar", "Saidu Sharif", "Shorkot", "Shewa Adda", "Swabi", "Swat", "Tangi", "Tank", "Thall",
+                        "Timergara", "Tordher"
+                    ],
+                    "Balochistan Cities" => [
+                        "Awaran", "Barkhan", "Chagai", "Dera Bugti", "Gwadar", "Harnai", "Jafarabad", "Jhal Magsi", "Kacchi",
+                        "Kalat", "Kech", "Kharan", "Khuzdar", "Killa Abdullah", "Killa Saifullah", "Kohlu", "Lasbela", "Lehri",
+                        "Loralai", "Mastung", "Musakhel", "Nasirabad", "Nushki", "Panjgur", "Pishin Valley", "Quetta", "Sherani",
+                        "Sibi", "Sohbatpur", "Washuk", "Zhob", "Ziarat"
+                    ]
+                ];
+
+                foreach ($provinces as $province => $cities) {
+                    echo '<option value="" disabled>' . $province . '</option>';
+                    foreach ($cities as $city) {
+                        echo '<option value="' . $city . '">' . $city . '</option>';
+                    }
+                }
+            ?>
+        </select>
+      </div>
+
+      <div class="input-group form-group">
+        <input type="text" class="form-control" placeholder="House number and street name" name="street_address">
+      </div>
+
+      <div class="input-group form-group">
+        <textarea class="form-control" placeholder="Address" name="address"></textarea>
       </div>
 
       <div class="form-group">
@@ -241,3 +311,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+

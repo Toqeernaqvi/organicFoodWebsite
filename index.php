@@ -1,6 +1,9 @@
 <?php
+ob_start();
 include 'header.php';
 include 'lib/connection.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 $sql = "SELECT * FROM product";
 $result = $conn->query($sql);
@@ -13,9 +16,9 @@ if (isset($_POST['add_to_cart'])) {
     }
   } else {
     header("location:login.php");
+    exit();
   }
   $user_id = $_POST['user_id'];
-  ;
   $product_name = $_POST['product_name'];
   $product_price = $_POST['product_price'];
   $product_id = $_POST['product_id'];
@@ -112,7 +115,7 @@ body {
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">RJ Iconic Styles</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
