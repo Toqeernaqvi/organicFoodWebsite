@@ -88,6 +88,7 @@ body {
           ?>
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <div>
+          <a href="product-details.php?id=<?php echo urlencode($row['id']); ?>">
           <div>
             <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img" data-toggle="modal"
               data-target="#exampleModal">
@@ -100,6 +101,7 @@ body {
               <h5 class="mb-1 product-name">
                 <?php echo $row["name"] ?>
               </h5>
+              </a>
               <h6 class="mb-4 product-price">Rs
                 <?php echo $row["Price"] ?>
               </h6>
@@ -107,26 +109,6 @@ body {
               <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
               <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
               <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
-              <a href="product-details.php?id=<?php echo urlencode($row['id']); ?>" class="btn btn-primary mt-2 add-to-cart">Product Detail</a>
-            </div>
-
-            <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog"
-              aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">RJ Iconic Styles</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                  </div>
-                  <div class="modal-footer">
-
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

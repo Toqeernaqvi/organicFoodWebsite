@@ -113,8 +113,7 @@ h1{
 }
 
 .topsell-head img,
-h3,
-p {
+h3{
   padding-bottom: 13px;
 }
 .topsell-head h3 {
@@ -359,6 +358,7 @@ p {
 .product-btn button:focus {
   outline: none;
 }
+
 
 img.product-img {
   width: 350px;
