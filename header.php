@@ -110,7 +110,7 @@
           } else {
             ?>
             <a href="login.php" class="btn btn btn-primary ml-4">Login</a>
-            <a href="Register.php" class="btn btn btn-info ml-2 ">Signup</a>
+            <a href="register.php" class="btn btn btn-info ml-2 ">Signup</a>
             <?php
           }
           ?>
