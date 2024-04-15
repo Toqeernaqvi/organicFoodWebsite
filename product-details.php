@@ -24,7 +24,7 @@ if (isset($_POST['add_to_cart'])) {
     } else {
       $insert_product = mysqli_query($conn, "INSERT INTO `cart`(userid, productid, name, quantity, price) VALUES('$user_id', '$product_id', '$product_name', '$product_quantity', '$product_price')");
       echo $message[] = 'product added to cart succesfully';
-      header('location:index.php');
+      header('location:cart.php');
     }
   
   }
@@ -119,7 +119,7 @@ if (isset($_POST['add_to_cart'])) {
 </body>
 </html>
 <script>
-        const addToCartButton = document.querySelector('.add-to-cart-big');
+        const addToCartButton = document.querySelector('.add-to-cart');
         const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
 
         addToCartButton.addEventListener('click', function(event) {
