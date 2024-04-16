@@ -68,6 +68,14 @@
                 <li><a href="./women_necklace.php" class="text-secondary p-2">necklace</a></li>
               </ul>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Custom jewelry</a>
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="./women_bracelet.php" class="text-secondary p-2">bracelet</a></li>
+                <li><a href="./women_necklace.php" class="text-secondary p-2">necklace</a></li>
+              </ul>
+            </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="index.php">Fragrances</a>
             </li>
@@ -92,10 +100,12 @@
           ?>
 
         </div>
-        <a href="cart.php" class="mr-2"><img src="img/cart.png">
-            <span class="badge badge-warning">
-              <?php echo $total ?>
-            </span>
+        <div>
+          <a href="cart.php" class="mr-2"><img src="img/cart.png">
+          
+          <span class="badge badge-warning">
+            <?php echo $total ?>
+          </span>
           </a>
 
           <?php
@@ -114,6 +124,7 @@
             <?php
           }
           ?>
+          </div>
         </div>
       </div>
     </nav>

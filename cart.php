@@ -180,6 +180,9 @@ if(isset($_GET['remove'])){
       <h5 class="mb-4">Payment Method</h5>
       <input type="radio" id="cod" name="payment_method" value="cod" required>
       <label for="cod">Cash On Delivery</label><br>
+      <div id="cod-msg" style="display:none;">
+        <p>Pay with cash upon delivery. 5 working days Delivery in normal circumstances. Due to road blockage, Public Holidays, Sale Season or Area LockDown, Deliveries make take longer. For Any Query Email us or Contact 03204694069 on WhatsApp.</p>
+      </div>
       <input type="radio" id="online_transfer" name="payment_method" value="online_transfer" required>
       <label for="online_transfer">Online Transfer</label><br>
       <div id="account_number_field" style="display:none;">
@@ -293,12 +296,15 @@ if(isset($_GET['remove'])){
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var cashOnDeliveryRadio = document.getElementById('cod');
+  var cashOnDeliveryMsg = document.getElementById('cod-msg');
   var onlineTransferRadio = document.getElementById('online_transfer');
   var accountNumberField = document.getElementById('account_number_field');
 
   cashOnDeliveryRadio.addEventListener('change', function() {
     if (this.checked) {
-      accountNumberField.style.display = 'none';
+      cashOnDeliveryMsg.style.display = 'block';
+    } else {
+      cashOnDeliveryMsg.style.display = 'none';
     }
   });
 

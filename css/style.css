@@ -3,7 +3,7 @@
   src: url("../fonts/antonio-bold.ttf");
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
 }
@@ -27,7 +27,7 @@ body{
 }
 
 .nav-item {
-  padding-right: 30px;
+  padding-right: 10px;
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
 }
@@ -41,17 +41,18 @@ body{
 .form-inline a {
   padding-right: 15px;
 }
+
 /**nav end**/
 
 /**banner start**/
 
-.bg-img{
+.bg-img {
   max-height: 80vh;
   width: 100%;
   object-fit: contain;
 }
 
-h1{
+h1 {
   font-family: "Merriweather", 'serif';
 }
 
@@ -63,6 +64,7 @@ h1{
   text-transform: uppercase;
   letter-spacing: 4px;
 }
+
 .bt2 {
   font-family: antonio;
   font-size: 80px;
@@ -72,18 +74,22 @@ h1{
   letter-spacing: 4px;
   padding-bottom: 20px;
 }
+
 .bt3 {
   color: #fff;
 }
+
 .bt4 {
   color: #fff;
   font-size: 14px;
 }
+
 .bt5 {
   color: #8beb8c;
   line-height: 10px;
   padding-bottom: 35px;
 }
+
 #banner-button {
   background-color: black;
   color: white;
@@ -113,9 +119,10 @@ h1{
 }
 
 .topsell-head img,
-h3{
+h3 {
   padding-bottom: 13px;
 }
+
 .topsell-head h3 {
   padding-bottom: 13px;
   font-family: "Raleway", sans-serif;
@@ -134,14 +141,17 @@ h3{
   padding: 12px;
   margin-top: -44px;
 }
+
 .tab ul {
   text-align: center;
   display: block;
   border: none;
 }
+
 .tab ul li {
   display: inline;
 }
+
 .tab ul li a {
   padding: 11px 24px;
   color: black;
@@ -149,6 +159,7 @@ h3{
   border: 1px solid black;
   display: inline;
 }
+
 .tab ul li a:hover {
   padding: 11px 24px;
   color: black;
@@ -156,9 +167,11 @@ h3{
   border: 1px solid red;
   display: inline;
 }
+
 .tab {
   margin-bottom: 65px;
 }
+
 .tab ul li {
   display: inline;
   padding-right: 20px;
@@ -174,10 +187,12 @@ h3{
   right: 0px;
   top: 50%;
 }
+
 .tab ul li:last-child::after {
   content: "";
   width: 0px;
 }
+
 /**top sell section end**/
 
 /***arrow start***/
@@ -205,29 +220,36 @@ h3{
 .titleline {
   margin-left: -8px;
 }
+
 .welcometitle {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
 }
+
 .w {
   padding: 15px;
   border: 1px solid black;
 }
+
 .wp {
   font-size: 11px;
 }
+
 .wh {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
   margin-bottom: 13px;
   font-size: 14px;
 }
+
 #wel1 {
   padding-top: 60px;
 }
+
 #wel2 {
   margin-top: 30px;
 }
+
 /***welcome end***/
 
 /***latest start***/
@@ -237,22 +259,28 @@ h3{
   font-weight: bold;
   font-size: 15px;
 }
+
 .lp {
   font-size: 13px;
 }
+
 .latest h5 {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
 }
+
 .latest {
   margin-top: 100px;
 }
+
 #l1 {
   padding-top: 35px;
 }
+
 #l2 {
   padding-top: 5px;
 }
+
 /***latest end***/
 
 /***subs start***/
@@ -260,12 +288,14 @@ h3{
 .subscribe {
   background-color: #f7f7f7;
 }
+
 .subs-header {
   margin-left: 10px;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
   font-size: 20px;
 }
+
 #subs-btn {
   background-color: black;
   color: white;
@@ -281,13 +311,16 @@ h3{
   margin-top: 35px;
   margin-bottom: 42px;
 }
+
 .footer-img {
   margin-top: 45px;
   margin-bottom: 35px;
 }
+
 .footer-img1 {
   margin-top: 30px;
 }
+
 .footer-header {
   font-family: "Raleway", sans-serif;
   font-weight: bold;
@@ -295,11 +328,13 @@ h3{
   margin-bottom: 30px;
   text-transform: uppercase;
 }
+
 /***subs***/
 .fm {
   padding-top: 35px;
   padding-bottom: 20px;
 }
+
 .kham {
   padding-top: 35px;
   padding-bottom: 20px;
@@ -317,6 +352,7 @@ h3{
 .sub {
   margin-left: 20px;
 }
+
 #last-footer-line {
   display: block;
   height: 1px;
@@ -324,6 +360,7 @@ h3{
   background-color: black;
   position: relative;
 }
+
 .last-pic {
   position: absolute;
   margin-top: -8px;
@@ -331,15 +368,16 @@ h3{
 
 /* Product CSS Section */
 
-.all-products{
+.all-products {
   max-width: 1440px;
   margin: 0 auto;
 }
 
 @media (max-width: 1440px) {
-  .all-products{
+  .all-products {
     margin: 0 40px;
-  }}
+  }
+}
 
 .product {
   gap: 50px;
@@ -349,10 +387,20 @@ h3{
   flex-wrap: wrap;
 }
 
+.single-product {
+  transition: .5s;
+}
+
+.single-product:hover {
+  -webkit-box-shadow: 0px 10px 43px -6px rgba(184, 184, 184, 1);
+  -moz-box-shadow: 0px 10px 43px -6px rgba(184, 184, 184, 1);
+  box-shadow: 0px 10px 43px -6px rgba(184, 184, 184, 1);
+}
+
 .product-btn {
   background-color: #8beb8c !important;
   border: none;
-  padding: 10px 20px; 
+  padding: 10px 20px;
 }
 
 .product-btn button:focus {
@@ -375,7 +423,7 @@ div:has(.product-img) {
   overflow: hidden;
 }
 
-.product-category{
+.product-category {
   color: #616161;
   font-size: .8rem;
   text-transform: uppercase;
@@ -385,7 +433,7 @@ div:has(.product-img) {
 
 }
 
-.product-name{
+.product-name {
   color: #4e657b;
   font-size: 1rem;
   text-align: center;
@@ -393,7 +441,7 @@ div:has(.product-img) {
   letter-spacing: 1px;
 }
 
-.product-price{
+.product-price {
   color: #333;
   font-weight: 600;
   text-align: center;
@@ -455,7 +503,7 @@ small.error {
 
 /* ========================  cart ============================= */
 
-.add-to-cart{
+.add-to-cart {
   margin: 0 auto;
   display: flex;
 }

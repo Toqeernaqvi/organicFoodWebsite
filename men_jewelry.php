@@ -55,10 +55,12 @@ if (isset($_POST['add_to_cart'])) {
         // output data of each row
         while ($row = mysqli_fetch_assoc($result)) {
           ?>
-      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="single-product">
         <div>
+          <a href="product-details.php?id=<?php echo urlencode($row['id']); ?>">
           <div>
-            <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img">
+            <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img" data-toggle="modal"
+              data-target="#exampleModal">
           </div>
           <div>
             <div>
@@ -68,6 +70,7 @@ if (isset($_POST['add_to_cart'])) {
               <h5 class="mb-1 product-name">
                 <?php echo $row["name"] ?>
               </h5>
+              </a>
               <h6 class="mb-4 product-price">Rs
                 <?php echo $row["Price"] ?>
               </h6>
@@ -76,7 +79,6 @@ if (isset($_POST['add_to_cart'])) {
               <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
               <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
             </div>
-            <!-- <input type="submit" class="btn btn-primary mt-2" value="add to cart" name="add_to_cart"> -->
           </div>
         </div>
       </form>

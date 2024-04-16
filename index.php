@@ -86,7 +86,7 @@ body {
         // output data of each row
         while ($row = mysqli_fetch_assoc($result)) {
           ?>
-      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+      <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="single-product">
         <div>
           <a href="product-details.php?id=<?php echo urlencode($row['id']); ?>">
           <div>
