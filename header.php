@@ -72,8 +72,8 @@
               <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Custom jewelry</a>
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="./women_bracelet.php" class="text-secondary p-2">bracelet</a></li>
-                <li><a href="./women_necklace.php" class="text-secondary p-2">necklace</a></li>
+                <li><a href="./custom_bracelet.php" class="text-secondary p-2">bracelet</a></li>
+                <li><a href="./custom_necklace.php" class="text-secondary p-2">necklace</a></li>
               </ul>
             </li>
             <!-- <li class="nav-item">

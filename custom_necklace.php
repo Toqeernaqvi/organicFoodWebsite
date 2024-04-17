@@ -3,7 +3,7 @@ include 'header.php';
 include 'lib/connection.php';
 
 
-$sql = "SELECT * FROM product where category = 'men bracelet'";
+$sql = "SELECT * FROM product where category = 'custom necklace'";
 $result = $conn->query($sql);
 
 if (isset($_POST['add_to_cart'])) {
@@ -43,7 +43,7 @@ if (isset($_POST['add_to_cart'])) {
         <div class="col-md-12 text-center">
           <img src="./img/mark.png">
           <h4>MEn Bracelets</h4>
-          <p>A passage of bracelets you need here</p>
+          <p>A passage of necklace you need here</p>
         </div>
       </div>
     </div>
