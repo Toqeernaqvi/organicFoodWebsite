@@ -93,6 +93,9 @@ if (isset($_POST['add_to_cart'])) {
   </div>
 </section>
 
+<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-afa90f1b-238c-475d-8d29-f9d09dc73d37" data-elfsight-app-lazy></div>
+
 <?php
 include 'footer.php';
 ?>
