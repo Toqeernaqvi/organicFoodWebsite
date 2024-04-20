@@ -63,7 +63,19 @@ if(isset($_POST['submit'])) {
             </div>
             <div class="mb-3">
                 <label for="exampleInputCategory" class="form-label">Category</label>
-                <input type="text" name="category" class="form-control" id="exampleInputCategory">
+                <!-- <input type="text" name="category" class="form-control" id="exampleInputCategory"> -->
+                <select name="category" id="exampleInputCategory">
+                    <option value="men watch">men watch</option>
+                    <option value="men ring">men ring</option>
+                    <option value="men bracelet">men bracelet</option>
+                    <option value="men necklace">men necklace</option>
+                    <option value="women watch">women watch</option>
+                    <option value="women ring">women ring</option>
+                    <option value="women bracelet">women bracelet</option>
+                    <option value="women necklace">women necklace</option>
+                    <option value="custom bracelet">custom bracelet</option>
+                    <option value="custom necklace">custom necklace</option>
+                </select>
             </div>
 
             <div class="mb-3">
