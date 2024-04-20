@@ -67,7 +67,7 @@ if (!isset($_SESSION['auth']) || $_SESSION['auth'] != 1) {
                 <div class="col-md-6">
                     <div class="card mb-4">
                         <div class="card-body ">
-                            <img src="admin/product_img/<?php echo $row['imgname']; ?>" alt="Product Image" class="mb-4 w-100">
+                            <img src="admin/product_img/<?php echo $row['imgname']; ?>" alt="Product Image" class="mb-4 w-100" loading="lazy">
                                 <!-- Add more card elements for additional product details -->
                         </div>
                     </div>

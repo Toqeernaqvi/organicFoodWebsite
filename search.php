@@ -37,7 +37,7 @@
             while($row = mysqli_fetch_assoc($result)) {
               ?>
     <tr>
-      <td><img src="admin/product_img/<?php echo $row['imgname']; ?>" style="width:50px;"></td>
+      <td><img src="admin/product_img/<?php echo $row['imgname']; ?>" style="width:50px;" loading="lazy"></td>
       <td><?php echo $row["name"] ?></td>
       <td><?php echo $row["category"] ?></td>
       <td><?php echo $row["description"] ?></td>

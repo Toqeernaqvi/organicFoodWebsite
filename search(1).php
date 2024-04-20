@@ -60,7 +60,7 @@
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="col-md-3 col-sm-6 col-6">
               <div>
-                <img src="admin/product_img/<?php echo $row['imgname']; ?>"  width="" height="300" style="vertical-align:left" >
+                <img src="admin/product_img/<?php echo $row['imgname']; ?>"  width="" height="300" style="vertical-align:left" loading="lazy">
                 <!-- <img src="smiley.gif" alt="Smiley face" width="42" height="42" style="vertical-align:middle"> -->
               </div>
               <div>

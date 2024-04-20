@@ -91,7 +91,7 @@ body {
           <a href="product-details.php?id=<?php echo urlencode($row['id']); ?>">
           <div>
             <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img" data-toggle="modal"
-              data-target="#exampleModal">
+              data-target="#exampleModal" loading="lazy">
           </div>
           <div>
             <div>
