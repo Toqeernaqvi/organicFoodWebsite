@@ -3,7 +3,7 @@ include 'header.php';
 include 'lib/connection.php';
 
 
-$sql = "SELECT * FROM product where category = 'women watches'";
+$sql = "SELECT * FROM product where category = 'women watch'";
 $result = $conn->query($sql);
 
 if (isset($_POST['add_to_cart'])) {
@@ -58,36 +58,36 @@ if (isset($_POST['add_to_cart'])) {
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="single-product">
         <div>
           <a href="product-details.php?id=<?php echo urlencode($row['id']); ?>">
-          <div>
-            <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img" data-toggle="modal"
-              data-target="#exampleModal" loading="lazy">
-          </div>
-          <div>
             <div>
-              <h4 class="mb-1 product-category">
-                <?php echo $row["category"] ?>
-              </h4>
-              <h5 class="mb-1 product-name">
-                <?php echo $row["name"] ?>
-              </h5>
-              </a>
-              <h6 class="mb-4 product-price">Rs
-                <?php echo $row["Price"] ?>
-              </h6>
-              <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid']; ?>">
-              <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
-              <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
-              <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
+              <img src="admin/product_img/<?php echo $row['imgname']; ?>" class="product-img" data-toggle="modal"
+                data-target="#exampleModal" loading="lazy">
             </div>
-          </div>
+            <div>
+              <div>
+                <h4 class="mb-1 product-category">
+                  <?php echo $row["category"] ?>
+                </h4>
+                <h5 class="mb-1 product-name">
+                  <?php echo $row["name"] ?>
+                </h5>
+          </a>
+          <h6 class="mb-4 product-price">Rs
+            <?php echo $row["Price"] ?>
+          </h6>
+          <input type="hidden" name="user_id" value="<?php echo $_SESSION['userid']; ?>">
+          <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
+          <input type="hidden" name="product_name" value="<?php echo $row['name']; ?>">
+          <input type="hidden" name="product_price" value="<?php echo $row['Price']; ?>">
         </div>
-      </form>
-      <?php
+    </div>
+  </div>
+  </form>
+  <?php
         }
       } else
         echo "0 results";
       ?>
-    </div>
+  </div>
   </div>
 </section>
 

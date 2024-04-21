@@ -112,6 +112,46 @@ h1 {
 
 /**isotope end**/
 
+/* top categories */
+.top-categories {
+  max-width: 1440px;
+  margin: 2rem auto 1rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.top-category {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: .5rem;
+  border: 1px solid black;
+}
+
+.top-category:hover {
+  box-shadow: 2px 4px 10px #bbbbbb;
+}
+
+.top-category>img {
+  width: 250px;
+}
+
+.top-category>h2 {
+  color: #333;
+  text-decoration: none;
+}
+
+@media (max-width: 1440px) {
+  .top-categories {
+    margin: 0 40px;
+  }
+}
+
 /**top sell section start**/
 .topsell-head {
   text-transform: uppercase;
@@ -374,6 +414,7 @@ h3 {
 }
 
 @media (max-width: 1440px) {
+
   .all-products {
     margin: 0 40px;
   }
