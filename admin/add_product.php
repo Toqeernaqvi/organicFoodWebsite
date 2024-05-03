@@ -28,9 +28,12 @@ if(isset($_POST['submit'])) {
     if(empty($name) || empty($category) || empty($description) || empty($quantity) || empty($price) || empty($filename)) {
         $result = "<h2>All fields are required.</h2>";
     } else {
-        // Insert data into the database
-        $insertSql = "INSERT INTO product (name, category, description, quantity, price, imgname) VALUES ('$name', '$category', '$description', $quantity, $price, '$uniqueFilename')";
-        if($conn->query($insertSql)) {
+         // Insert data into the database using parameterized query
+        $insertSql = "INSERT INTO product (name, category, description, quantity, price, imgname) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($insertSql);
+        $stmt->bind_param("sssids", $name, $category, $description, $quantity, $price, $uniqueFilename);
+        
+        if($stmt->execute()) {
             // Move uploaded file to the desired folder
             if(copy($tempname, $folder.$uniqueFilename)) {
               $result = "<h2>Data inserted successfully.</h2>";

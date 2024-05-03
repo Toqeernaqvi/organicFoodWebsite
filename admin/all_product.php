@@ -18,9 +18,11 @@ if (isset($_POST['update_update_btn'])) {
   $name = $_POST['update_name'];
   $category = $_POST['update_category'];
   $quantity = $_POST['update_quantity'];
+  $description = $_POST['update_description'];
+
   $price = $_POST['update_Price'];
   $update_id = $_POST['update_id'];
-  $update_quantity_query = mysqli_query($conn, "UPDATE `product` SET quantity = '$quantity' , name='$name' , category='$category' ,price='$price'  WHERE id = '$update_id'");
+  $update_quantity_query = mysqli_query($conn, "UPDATE `product` SET quantity = '$quantity' , name='$name' , category='$category' ,price='$price', description='$description'  WHERE id = '$update_id'");
   if ($update_quantity_query) {
     header('location:all_product.php');
   }
@@ -61,6 +63,8 @@ if (isset($_GET['remove'])) {
 
           <th scope="col">Quantity</th>
           <th scope="col">Price</th>
+          <th scope="col">Description</th>
+
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -76,10 +80,15 @@ if (isset($_GET['remove'])) {
               <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <input type="hidden" name="update_id" value="<?php echo $row['id']; ?>">
                 <td><input type="text" name="update_name" value="<?php echo $row['name']; ?>"></td>
-                <td><input type="text" name="update_category" value="<?php echo $row['category']; ?>"></td>
+               <td><input type="text" name="update_category" value="<?php echo $row['category']; ?>" readonly></td>
+
 
                 <td><input type="number" name="update_quantity" value="<?php echo $row['quantity']; ?>"></td>
                 <td> <input type="number" name="update_Price" value="<?php echo $row['Price']; ?>"></td>
+                <td>
+                  <textarea name="update_description" rows="4" cols="50" style="overflow-y: scroll;"><?php echo $row['description']; ?></textarea>
+                </td>
+
                 <td> <input type="submit" value="update" name="update_update_btn" class="btn btn-primary">
               </form>
               </td>
