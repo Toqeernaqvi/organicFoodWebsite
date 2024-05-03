@@ -49,16 +49,47 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, 50%);
 }
+
+.text-container {
+  max-width: 300px; /* Adjust the width as per your requirement */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds ellipsis (...) when the text overflows */
+ 
+}
 </style>
 
 <!--banner start-->
-<div class="banner" id="banner">
-  <div>
-    <img src="./img/header.webp" class="bg-img">
+   <div>
+    <div class="banner container-fluid p-5" id="banner">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="./img/header1.png" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./img/header2.png" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./img/header3.jpg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-
+ 
 
 
 </div>
@@ -129,7 +160,7 @@ body {
                 <h4 class="mb-1 product-category">
                   <?php echo $row["category"] ?>
                 </h4>
-                <h5 class="mb-1 product-name">
+                <h5 class="mb-1 product-name text-container">
                   <?php echo $row["name"] ?>
                 </h5>
           </a>
