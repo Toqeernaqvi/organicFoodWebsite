@@ -430,6 +430,7 @@ h3 {
 
 .single-product {
   transition: .5s;
+  width: 350px;
 }
 
 .single-product:hover {
