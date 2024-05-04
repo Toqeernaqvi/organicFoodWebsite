@@ -49,57 +49,66 @@ if(isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Product</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
 </head>
+
 <body>
-    <div class="container">
-        <?php echo $result; ?>
-        <h4>Add Product</h4>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label for="exampleInputName" class="form-label">Product Name</label>
-                <input type="text" name="name" class="form-control" id="exampleInputName">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputCategory" class="form-label">Category</label>
-                <!-- <input type="text" name="category" class="form-control" id="exampleInputCategory"> -->
-                <select name="category" id="exampleInputCategory">
-                    <option value="men watch">men watch</option>
-                    <option value="men ring">men ring</option>
-                    <option value="men bracelet">men bracelet</option>
-                    <option value="men necklace">men necklace</option>
-                    <option value="women watch">women watch</option>
-                    <option value="women ring">women ring</option>
-                    <option value="women bracelet">women bracelet</option>
-                    <option value="women necklace">women necklace</option>
-                    <option value="custom bracelet">custom bracelet</option>
-                    <option value="custom necklace">custom necklace</option>
-                </select>
-            </div>
+  <div class="container">
+    <?php echo $result; ?>
+    <h4>Add Product</h4>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="exampleInputName" class="form-label">Product Name</label>
+        <input type="text" name="name" class="form-control" id="exampleInputName">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputCategory" class="form-label">Category</label>
+        <!-- <input type="text" name="category" class="form-control" id="exampleInputCategory"> -->
+        <select name="category" id="exampleInputCategory">
+          <option value="men watch">men watch</option>
+          <option value="men ring">men ring</option>
+          <option value="men bracelet">men bracelet</option>
+          <option value="men necklace">men necklace</option>
+          <option value="women watch">women watch</option>
+          <option value="women ring">women ring</option>
+          <option value="women bracelet">women bracelet</option>
+          <option value="women necklace">women necklace</option>
+          <option value="women earrings">women earrings</option>
+          <option value="custom bracelet">custom bracelet</option>
+          <option value="custom necklace">custom necklace</option>
+          <option value="couple rings">couple rings</option>
+          <option value="couple watches">couple watches</option>
+          <option value="couple pendants">couple pendants</option>
+          <option value="fragrance">fragrance</option>
+          <option value="gift">gift</option>
+        </select>
+      </div>
 
-            <div class="mb-3">
-                <label for="exampleInputQuantity" class="form-label">Quantity</label>
-                <input type="number" name="quantity" class="form-control" id="exampleInputQuantity">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPrice" class="form-label">Price</label>
-                <input type="Number" name="price" class="form-control" id="exampleInputPrice">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputDescription" class="form-label">Description</label>
-                <textarea rows="10" cols="50" name="description" class="form-control" id="exampleInputDescription"></textarea>
+      <div class="mb-3">
+        <label for="exampleInputQuantity" class="form-label">Quantity</label>
+        <input type="number" name="quantity" class="form-control" id="exampleInputQuantity">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPrice" class="form-label">Price</label>
+        <input type="Number" name="price" class="form-control" id="exampleInputPrice">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputDescription" class="form-label">Description</label>
+        <textarea rows="10" cols="50" name="description" class="form-control" id="exampleInputDescription"></textarea>
 
-            </div>
-            <div class="mb-3">
-                <label for="uploadfile" class="form-label">Image</label>
-                <input type="file" name="uploadfile" />
-            </div>
-            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+      </div>
+      <div class="mb-3">
+        <label for="uploadfile" class="form-label">Image</label>
+        <input type="file" name="uploadfile" />
+      </div>
+      <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 </body>
+
 </html>
