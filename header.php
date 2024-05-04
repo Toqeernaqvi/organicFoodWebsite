@@ -46,7 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Home</a>
+              <a class="nav-link" href="./">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Men jewelry</a>
@@ -66,6 +66,7 @@
                 <li><a href="./women_ring.php" class="text-secondary p-2">rings</a></li>
                 <li><a href="./women_bracelet.php" class="text-secondary p-2">bracelet</a></li>
                 <li><a href="./women_necklace.php" class="text-secondary p-2">necklace</a></li>
+                <li><a href="./women_earrings.php" class="text-secondary p-2">Earrings</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -76,19 +77,28 @@
                 <li><a href="./custom_necklace.php" class="text-secondary p-2">necklace</a></li>
               </ul>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="index.php">Fragrances</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Couple</a>
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="./couple_watches.php" class="text-secondary p-2">Watches</a></li>
+                <li><a href="./couple_rings.php" class="text-secondary p-2">Rings</a></li>
+                <li><a href="./couple_pendants.php" class="text-secondary p-2">Pendants</a></li>
+              </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about-us.php">Gift</a>
-            </li> -->
+              <a class="nav-link" href="./fragrances.php">Fragrances</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./gift.php">Gift</a>
+            </li>
           </ul>
-          <form class="form-inline" action="search(1).php" method="post">
-            <!--<a href=""><img src="img/search.png"></a>-->
+          <!-- <form class="form-inline" action="search(1).php" method="post">
+            <a href=""><img src="img/search.png"></a>
             <input class="form-control rounded-0" type="search" placeholder="Search" aria-label="Search" name="name">
             <button class="btn border rounded-0" type="submit" style="margin-left:7px;margin-right:7px;"><img
                 src="img/search.png"></button>
-          </form>
+          </form> -->
           <?php
           $total = 0;
           if (mysqli_num_rows($result) > 0) {
@@ -102,10 +112,10 @@
         </div>
         <div>
           <a href="cart.php" class="mr-2"><img src="img/cart.png">
-          
-          <span class="badge badge-warning">
-            <?php echo $total ?>
-          </span>
+
+            <span class="badge badge-warning">
+              <?php echo $total ?>
+            </span>
           </a>
 
           <?php
@@ -113,19 +123,19 @@
           if (isset($_SESSION['auth'])) {
             if ($_SESSION['auth'] == 1) {
               echo $_SESSION['username']; ?>
-              <a href="profile.php" class="btn btn-primary ml-3">My Orders</a>
-              <a href="logout.php" class="btn btn-info ml-2">logout</a>
-              <?php
+          <a href="profile.php" class="btn btn-primary ml-3">My Orders</a>
+          <a href="logout.php" class="btn btn-info ml-2">logout</a>
+          <?php
             }
           } else {
             ?>
-            <a href="login.php" class="btn btn btn-primary ml-4">Login</a>
-            <a href="register.php" class="btn btn btn-info ml-2 ">Signup</a>
-            <?php
+          <a href="login.php" class="btn btn btn-primary ml-4">Login</a>
+          <a href="register.php" class="btn btn btn-info ml-2 ">Signup</a>
+          <?php
           }
           ?>
-          </div>
         </div>
+      </div>
       </div>
     </nav>
 
